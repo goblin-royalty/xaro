@@ -9,13 +9,13 @@
     width: 100%;
     background: #000;
     position: relative;
-    height: 1.7rem;
+    height: 1.5rem;
     border-radius: 0.5rem;
     margin-top: 1.1rem;
 }
 .kodningCurrentBar {
     background: #483548;
-    height: 1.4rem;
+    height: 1.2rem;
     margin-top: 0.15rem;
     margin-left: 0.19rem;
     border-top-left-radius: 0.5rem;
