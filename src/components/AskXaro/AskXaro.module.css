@@ -1,0 +1,38 @@
+.askXaroContainer {
+    position: relative;
+}
+.resultsContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 4rem;
+    width: 32rem;
+    background: #071113cf;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+.searchResult {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+.searchResult:hover {
+    filter: brightness(2);
+}
+.askXaro {
+    width: 30rem;
+    margin-top: 39rem;
+    background: #071113;
+    padding: 1rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-align: center;
+    color: #ddd;
+    box-shadow: 0px 12px 1px 1px #00000059;
+}

@@ -1,0 +1,63 @@
+.ShipOverview {
+    width: 100%;
+    height: 40rem;
+    position: relative;
+    z-index: 1;
+}
+
+.shipSubSystem {
+    height: 4.6rem;
+    border: 1px solid #10393c;
+    border-radius: 0.5rem;
+    background: #00000069;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.basicInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detailedInfo {
+    display: none;
+}
+
+.selected {
+    box-shadow: 0px 6px 2px 8px #00000059;
+    height: 9.4rem;
+    margin-bottom: 2rem;
+    background: #000000b3;
+    pointer-events: none;
+}
+.selected .detailedInfo {
+    display: flex;
+}
+
+.ShipOverview h2:nth-child(1) {
+    width: 9rem;
+}
+.ShipOverview h2:nth-child(2) {
+    width: 11rem;
+}
+.ShipOverview h2:nth-child(3) {
+    width: 46rem;
+}
+.ShipOverview h2:nth-child(4) {
+    width: 7rem;
+}
+
+/* Duplicated in ShipSystem component */
+.online {
+    color: #45c845;
+}
+.inactive {
+    color: gray;
+}
+.offline {
+    color: #812121;
+}

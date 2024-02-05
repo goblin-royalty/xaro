@@ -1,0 +1,25 @@
+.shipSystem {
+    width: 4.4rem;
+    font-size: 1.23rem;
+    padding: 1rem;
+    border-right: 1px solid #10393c;
+    position: relative;
+    cursor: pointer;
+}
+.shipSystem:last-child {
+    border: none;
+}
+
+.title {
+    margin: 0;
+}
+
+.online {
+    color: #45c845;
+}
+.inactive {
+    color: gray;
+}
+.offline {
+    color: #812121;
+}
