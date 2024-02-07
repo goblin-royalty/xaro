@@ -3,6 +3,7 @@
     height: 40rem;
     position: relative;
     z-index: 1;
+    
 }
 
 .shipSubSystem {
@@ -15,6 +16,8 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    transition: 0.2s ease-in-out;
+
 }
 
 .basicInfo {
