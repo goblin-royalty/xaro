@@ -99,3 +99,10 @@
         filter: brightness(1);
     }
 }
+
+/* Temp until a dynamic re-adjustment based on screen size is created */
+@media (max-width: 1000px){
+    .celestialBodyContainer {
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 .askXaroContainer {
     position: relative;
+    margin-bottom: 2rem;
 }
 .resultsContainer {
     position: absolute;
@@ -35,4 +36,15 @@
     text-align: center;
     color: #ddd;
     box-shadow: 0px 12px 1px 1px #00000059;
+}
+
+@media (max-width: 1000px){
+    .askXaroContainer {
+        margin-bottom: 0;
+    }
+    .askXaro {
+        margin-top: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }

@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100%;
     color: #ddd;
+    overflow: hidden;
 }
 .galaxy_map {
     width: 100%;
@@ -140,4 +141,43 @@ body {
 .sidePanel {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.sidePanel .mobileToggle {
+    position: absolute;
+    right: 1rem;
+    top: 18rem;
+    display: none;
+    margin-right: 16rem;
+    width: 2rem;
+    background: #071113;
+    height: 8rem;
+    margin-top: -4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+@media (max-width: 1000px){
+    html {
+        font-size: 11px;
+    }
+    .sidePanel .mobileToggle {
+        display: flex;
+    }
+    .sidePanel {
+        margin-right: -17rem;
+    }
+    .sidePanel > div {
+        box-shadow: none;
+    }
+    .sidePanel.expandedPanel {
+        margin-right: 0;
+    }
 }

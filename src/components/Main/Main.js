@@ -22,6 +22,7 @@ export default function Main() {
     const [currentGalaxy, setCurrentGalaxy] = useState('Milky Way');
     const [currentCluster, setCurrentCluster] = useState('');
     const [currentSystem, setCurrentSystem] = useState('');
+    const [sidePanelExpanded, setSidePanelExpanded] = useState(false);
 
     const displayCelestialBodyDetails = (new_celestial_body) => {
         setCurrentCelestialBody(new_celestial_body);
@@ -70,6 +71,10 @@ export default function Main() {
         return capitalizeFirstLetter(breadcrumb_target);
     }
 
+    const toggleSidePanelExpanded = () => {
+        setSidePanelExpanded(!sidePanelExpanded);
+    }
+
     // TODO: Helper method. Should be moved to top level component
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -81,9 +86,10 @@ export default function Main() {
             <div className={styles.galaxy_map}>
                 <CrewList/>
                 <XaroStatus changePage={changePage}/>
-                <div className={styles.sidePanel}>
+                <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
                 </div>
                 
 
@@ -99,9 +105,10 @@ export default function Main() {
             <div className={styles.system_map}>
                 <CrewList/>
                 <XaroStatus changePage={changePage}/>
-                <div className={styles.sidePanel}>
+                <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
                 </div>
                 
                 <CelestialBody click={zoomToSystem} position={{top: '21rem', left: '28rem'}} type="system" name="Ariansu 8209" tooltip="Ariansu 8209"/>
@@ -117,9 +124,10 @@ export default function Main() {
             <div className={styles.system_map}>
                 <CrewList/>
                 <XaroStatus changePage={changePage}/>
-                <div className={styles.sidePanel}>
+                <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails currentCelestialBody={currentCelestialBody} changePlanet={displayCelestialBodyDetails}/>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
                 </div>
                 
                 <div className={styles.orbit_0}>

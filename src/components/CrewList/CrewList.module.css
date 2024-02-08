@@ -6,7 +6,7 @@
     border-radius: 0.5rem;
     box-shadow: 15px 14px #00000059;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .backgroundTexture {
@@ -20,4 +20,36 @@
     background-repeat: no-repeat;
     background-position: 49% 0%;
     opacity: 0.09;
+}
+
+.mobileToggle {
+    position: absolute;
+    left: 1rem;
+    top: 18rem;
+    display: none;
+    margin-left: 16rem;
+    width: 2rem;
+    background: #071113;
+    height: 8rem;
+    margin-top: -4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+@media (max-width: 1000px){
+    .mobileToggle {
+        display: flex;
+    }
+    .crewList {
+        margin-left: -17rem;
+        box-shadow: none;
+    }
+    .crewList.expandedPanel {
+        margin-left: 0;
+    }
 }

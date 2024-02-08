@@ -8,6 +8,7 @@ import temp_data from '../../data/data.json';
 
 export default function CrewList() {
     const [expandedMemberId, setExpandedMemberId] = useState();
+    const [expanded, setExpanded] = useState(false);
 
     // TODO: make work without creating this extra array
     let crew_member_array = [];
@@ -19,8 +20,12 @@ export default function CrewList() {
         id != expandedMemberId ? setExpandedMemberId(id) : setExpandedMemberId();
     }
 
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    }
+
     return (
-        <div className={styles.crewList}>
+        <div className={`${styles.crewList} ${expanded ? styles.expandedPanel : ''}`}>
             {crew_member_array.map((crew_member) => (
                 <CrewMember
                     toggleCrewMember={toggleCrewMember}
@@ -30,6 +35,7 @@ export default function CrewList() {
                 />
             ))}
             <div className={styles.backgroundTexture}></div>
+            <div className={styles.mobileToggle} onClick={() => {toggleExpanded()}}>{expanded ? '<' : '>'}</div>
         </div>
     );
 }
