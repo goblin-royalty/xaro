@@ -54,7 +54,7 @@ export default function Main() {
             
         ];
         
-        if(new_page != 'galaxy_map') {
+        if(new_page !== 'galaxy_map') {
             breadCrumbPath.push({
                 title: convertToTitle(new_page),
                 target: new_page,
@@ -81,7 +81,7 @@ export default function Main() {
     }
 
     let page_contents = '';
-    if(currentPage == 'galaxy_map') {
+    if(currentPage === 'galaxy_map') {
         page_contents = 
             <div className={styles.galaxy_map}>
                 <CrewList/>
@@ -100,7 +100,7 @@ export default function Main() {
                 <img className={styles.galaxy_map_background} src={galaxy_map_background}/>
             </div>
         ;
-    } else if(currentPage == 'cluster_map') {
+    } else if(currentPage === 'cluster_map') {
         page_contents = 
             <div className={styles.system_map}>
                 <CrewList/>
@@ -119,7 +119,7 @@ export default function Main() {
                 <div className={styles.cluster_map}></div>
             </div>
         ;
-    } else if(currentPage == 'system_map') {
+    } else if(currentPage === 'system_map') {
         page_contents = 
             <div className={styles.system_map}>
                 <CrewList/>
@@ -145,7 +145,7 @@ export default function Main() {
                 <div className={styles.backgroundTexture}></div>
             </div>
         ;
-    } else if(currentPage == 'ship_overview') {
+    } else if(currentPage === 'ship_overview') {
         page_contents = 
             <div className={styles.shipOverview}>
                 <CrewList/>

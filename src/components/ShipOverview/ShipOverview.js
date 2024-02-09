@@ -34,7 +34,7 @@ export default function ShipOverview({tab}) {
     return (
         <div className={styles.ShipOverview}>
             {subsystems_array.map(subsystem => (
-                <div onClick={selectSubSystem} subsystem={subsystem.name} key={subsystem.id} className={`${styles.shipSubSystem} ${subsystem.name == selectedTab ? styles.selected : ''}`}>
+                <div onClick={selectSubSystem} subsystem={subsystem.name} key={subsystem.id} className={`${styles.shipSubSystem} ${subsystem.name === selectedTab ? styles.selected : ''}`}>
                     <div className={styles.basicInfo}>
                         <h2>{subsystem.name}</h2>
                         <h2>{subsystem.current}</h2>

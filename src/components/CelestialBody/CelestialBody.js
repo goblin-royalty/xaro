@@ -29,7 +29,7 @@ export default function CelestialBody({click, position = {}, iconStyles = {}, ty
     }
 
     let focus_crosshairs = '';
-    if(type == 'system') {
+    if(type === 'system') {
         focus_crosshairs = 
             <div className={styles.focus_container}>
                 <div className={`${styles.focus_top_left} ${styles.focus_corner}`}></div>

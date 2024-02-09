@@ -17,7 +17,7 @@ export default function CrewList() {
     });
 
     const toggleCrewMember = (id) => {
-        id != expandedMemberId ? setExpandedMemberId(id) : setExpandedMemberId();
+        id !== expandedMemberId ? setExpandedMemberId(id) : setExpandedMemberId();
     }
 
     const toggleExpanded = () => {
@@ -29,7 +29,7 @@ export default function CrewList() {
             {crew_member_array.map((crew_member) => (
                 <CrewMember
                     toggleCrewMember={toggleCrewMember}
-                    expanded={expandedMemberId == crew_member.id}
+                    expanded={expandedMemberId === crew_member.id}
                     key={crew_member.id}
                     data={crew_member}
                 />

@@ -17,7 +17,7 @@ export default function AskXaro() {
     const globalSearch = (data, keyword) => {
         let result = 'not found';
 
-        if(typeof data != 'object') {
+        if(typeof data !== 'object') {
             return result;
         }
 
@@ -34,7 +34,7 @@ export default function AskXaro() {
             }
         });
 
-        if(result != undefined) {
+        if(result !== undefined) {
             const new_result = {
                 name: result,
                 data: data[result]
