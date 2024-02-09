@@ -93,9 +93,9 @@ export default function Main() {
                 </div>
                 
 
-                <CelestialBody click={zoomToCluster} position={{top: '26rem', left: '34rem'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
-                <CelestialBody click={zoomToCluster} position={{top: '39rem', left: '54rem'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
-                <CelestialBody click={zoomToCluster} position={{top: '16rem', left: '66rem'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
+                <CelestialBody click={zoomToCluster} position={{top: '46%', left: '32%'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
+                <CelestialBody click={zoomToCluster} position={{top: '68%', left: '50%'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
+                <CelestialBody click={zoomToCluster} position={{top: '28%', left: '61%'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
 
                 <img className={styles.galaxy_map_background} src={galaxy_map_background}/>
             </div>
