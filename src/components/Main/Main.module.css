@@ -179,5 +179,6 @@ body {
     }
     .sidePanel.expandedPanel {
         margin-right: 0;
+        transition: 0.2s ease-in-out;
     }
 }

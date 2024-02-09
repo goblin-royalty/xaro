@@ -51,5 +51,6 @@
     }
     .crewList.expandedPanel {
         margin-left: 0;
+        transition: 0.2s ease-in-out ;
     }
 }
