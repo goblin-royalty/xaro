@@ -48,9 +48,9 @@
     .crewList {
         margin-left: -17rem;
         box-shadow: none;
+        transition: 0.2s ease-in-out;
     }
     .crewList.expandedPanel {
         margin-left: 0;
-        transition: 0.2s ease-in-out ;
     }
 }

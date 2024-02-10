@@ -173,12 +173,12 @@ body {
     }
     .sidePanel {
         margin-right: -17rem;
+        transition: 0.2s ease-in-out;
     }
     .sidePanel > div {
         box-shadow: none;
     }
     .sidePanel.expandedPanel {
         margin-right: 0;
-        transition: 0.2s ease-in-out;
     }
 }
