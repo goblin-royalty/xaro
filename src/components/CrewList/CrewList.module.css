@@ -39,6 +39,12 @@
     cursor: pointer;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    writing-mode: vertical-rl;
+/*  Vertical option:
+
+   text-orientation: upright;
+    font-size: 1.8rem; 
+ */
 }
 
 @media (max-width: 1000px){

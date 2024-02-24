@@ -35,7 +35,7 @@ export default function CrewList() {
                 />
             ))}
             <div className={styles.backgroundTexture}></div>
-            <div className={styles.mobileToggle} onClick={() => {toggleExpanded()}}>{expanded ? '<' : '>'}</div>
+            <div className={styles.mobileToggle} onClick={() => {toggleExpanded()}}>Crew</div>
         </div>
     );
 }

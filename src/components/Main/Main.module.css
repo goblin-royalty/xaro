@@ -162,6 +162,11 @@ body {
     cursor: pointer;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
+    writing-mode: vertical-rl;
+}
+/* Rotating Orbit text counterclouckwise. Can remove it if you wanna. */
+.orbitRotateCounterClockwise{
+    transform: rotate(-180deg);
 }
 
 @media (max-width: 1000px){
@@ -169,7 +174,7 @@ body {
         font-size: 11px;
     }
     .sidePanel .mobileToggle {
-        display: flex;
+        display: flex;  
     }
     .sidePanel {
         margin-right: -17rem;

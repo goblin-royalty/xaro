@@ -89,7 +89,7 @@ export default function Main() {
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
-                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}><span className={styles.orbitRotateCounterClockwise}>Orbit</span></div>
                 </div>
                 
 
