@@ -163,11 +163,16 @@ body {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 1.6rem; 
 }
-/* Rotating Orbit text counterclouckwise. Can remove it if you wanna. */
+/* Rotating Orbit text counterclouckwise. Can remove it if you wanna.
+
 .orbitRotateCounterClockwise{
+
     transform: rotate(-180deg);
 }
+*/
 
 @media (max-width: 1000px){
     html {
