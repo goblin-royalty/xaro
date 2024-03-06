@@ -68,56 +68,56 @@ body {
 /* Probably a better way to handle this than styling CelestialBody component elements from Main */
 .orbit_0 {
     position: absolute;
-    width: 8rem;
-    height: 8rem;
-    top: 26rem;
-    left: 55.5rem;
+    width: 8vw;
+    height: 8vh;
+    top: 38vh;
+    left: 46.2vw;
     z-index: 5;
 }
 
 .orbit_1 {
     position: absolute;
-    width: 20rem;
-    height: 10rem;
-    left: 49.3rem;
-    top: 24.66rem;
+    width: 18vw;
+    height: 14vh;
+    left: 40.25vw;
+    top: 37vh;
     border: 5px double #ffffff29;
     border-radius: 100%;
     z-index: 4;
 }
 .orbit_1 > div {
-    top: 2.6rem;
-    left: -2.3rem;
+    top: 2.8vh;
+    left: -2vw;
 }
 
 .orbit_2 {
     position: absolute;
-    width: 35rem;
-    height: 17rem;
-    left: 42rem;
-    top: 21.2rem;
+    width: 30vw;
+    height: 26vh;
+    left: 35vw;
+    top: 32vh;
     border: 5px double #ffffff29;
     border-radius: 100%;
     z-index: 3;
 }
 .orbit_2 > div {
-    top: 14.46rem;
-    left: 14.7rem;
+    top: 22.4vh;
+    left: 12.3vw;
 }
 
 .orbit_3 {
     position: absolute;
-    width: 58rem;
-    height: 26rem;
-    left: 31.5rem;
-    top: 16.66rem;
+    width: 48vw;
+    height: 39vh;
+    left: 26vw;
+    top: 24.5vh;
     border: 5px double #ffffff29;
     border-radius: 100%;
     z-index: 2;
 }
 .orbit_3 > div {
-    top: 5rem;
-    left: 53rem;
+    top: 8vh;
+    left: 44vw;
 }
 
 .orbit_1:hover, .orbit_2:hover, .orbit_3:hover {
@@ -142,7 +142,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: 1;
+z-index: 1;
 }
 
 .sidePanel .mobileToggle {
@@ -166,13 +166,6 @@ body {
     text-orientation: upright;
     font-size: 1.6rem; 
 }
-/* Rotating Orbit text counterclouckwise. Can remove it if you wanna.
-
-.orbitRotateCounterClockwise{
-
-    transform: rotate(-180deg);
-}
-*/
 
 @media (max-width: 1000px){
     html {
@@ -190,5 +183,9 @@ body {
     }
     .sidePanel.expandedPanel {
         margin-right: 0;
+    }
+    .orbit_2 > div {
+        top: 19.5vh;
+        left: 12.3vw;
     }
 }

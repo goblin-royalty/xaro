@@ -89,13 +89,13 @@ export default function Main() {
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
-                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}><span className={styles.orbitRotateCounterClockwise}>Orbit</span></div>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>Orbit</div>
                 </div>
                 
 
-                <CelestialBody click={zoomToCluster} position={{top: '46%', left: '32%'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
-                <CelestialBody click={zoomToCluster} position={{top: '68%', left: '50%'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
-                <CelestialBody click={zoomToCluster} position={{top: '28%', left: '61%'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
+                <CelestialBody click={zoomToCluster} position={{top: '46vh', left: '32vw'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
+                <CelestialBody click={zoomToCluster} position={{top: '68vh', left: '50vw'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
+                <CelestialBody click={zoomToCluster} position={{top: '28vh', left: '61vw'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
 
                 <img className={styles.galaxy_map_background} src={galaxy_map_background}/>
             </div>
@@ -108,13 +108,13 @@ export default function Main() {
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
-                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>Orbit</div>
                 </div>
                 
-                <CelestialBody click={zoomToSystem} position={{top: '21rem', left: '28rem'}} type="system" name="Ariansu 8209" tooltip="Ariansu 8209"/>
-                <CelestialBody click={zoomToSystem} position={{top: '32rem', left: '40rem'}} type="system" name="Surebu 5628" tooltip="Surebu 5628"/>
-                <CelestialBody click={zoomToSystem} position={{top: '38rem', left: '64rem'}} type="system" name="Hexa 0270" tooltip="Hexa 0270"/>
-                <CelestialBody click={zoomToSystem} position={{top: '14rem', left: '70rem'}} type="system" name="Aporis 6519" tooltip="Aporis 6519"/>
+                <CelestialBody click={zoomToSystem} position={{top: '30vh', left: '23vw'}} type="system" name="Ariansu 8209" tooltip="Ariansu 8209"/>
+                <CelestialBody click={zoomToSystem} position={{top: '45vh', left: '34vw'}} type="system" name="Surebu 5628" tooltip="Surebu 5628"/>
+                <CelestialBody click={zoomToSystem} position={{top: '52vh', left: '56vw'}} type="system" name="Hexa 0270" tooltip="Hexa 0270"/>
+                <CelestialBody click={zoomToSystem} position={{top: '20vh', left: '62vw'}} type="system" name="Aporis 6519" tooltip="Aporis 6519"/>
 
                 <div className={styles.cluster_map}></div>
             </div>
@@ -127,7 +127,7 @@ export default function Main() {
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails currentCelestialBody={currentCelestialBody} changePlanet={displayCelestialBodyDetails}/>
-                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>{sidePanelExpanded ? '>' : '<'}</div>
+                    <div className={styles.mobileToggle} onClick={() => {toggleSidePanelExpanded()}}>Orbit</div>
                 </div>
                 
                 <div className={styles.orbit_0}>

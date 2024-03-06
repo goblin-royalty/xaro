@@ -100,9 +100,14 @@
     }
 }
 
-/* Temp until a dynamic re-adjustment based on screen size is created */
-/* @media (max-width: 1000px){
-    .celestialBodyContainer {
-        display: none;
-    }
-} */
+@media (max-width: 1000px){
+   
+        .star {
+            width: 5.6rem;
+        }
+        .planet {
+            width: 4rem;
+            border: 9px double transparent;
+            border-radius: 100%;
+        }
+}
