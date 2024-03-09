@@ -4,6 +4,8 @@ import styles from "./ShipOverview.module.css";
 
 import temp_data from '../../data/data.json';
 
+import getData from '../../utils/data_functions'
+
 export default function ShipOverview({tab}) {
     const [selectedTab, setSelectedTab] = useState(tab);
 
@@ -26,14 +28,17 @@ export default function ShipOverview({tab}) {
     }
 
     // TODO: make work without creating this extra array
-    let subsystems_array = [];
+/*     let subsystems_array = [];
     Object.keys(temp_data.ship_subsystems).forEach(subsystem_key => {
         subsystems_array.push(temp_data.ship_subsystems[subsystem_key]);
-    });
+    }); */
+
+    const data = getData(temp_data.ship_subsystems);
+
 
     return (
         <div className={styles.ShipOverview}>
-            {subsystems_array.map(subsystem => (
+            {data.map(subsystem => (
                 <div onClick={selectSubSystem} subsystem={subsystem.name} key={subsystem.id} className={`${styles.shipSubSystem} ${subsystem.name === selectedTab ? styles.selected : ''}`}>
                     <div className={styles.basicInfo}>
                         <h2>{subsystem.name}</h2>

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import globalStyles from "./global.css";
 import styles from "./Main.module.css";
+import capitalizeFirstLetter from "../../utils/string_functions";
 
 import CrewList from "../CrewList/CrewList";
 import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
@@ -75,10 +76,10 @@ export default function Main() {
         setSidePanelExpanded(!sidePanelExpanded);
     }
 
-    // TODO: Helper method. Should be moved to top level component
+/*     // TODO: Helper method. Should be moved to top level component
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+    } */
 
     let page_contents = '';
     if(currentPage === 'galaxy_map') {
