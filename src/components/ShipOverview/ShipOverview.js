@@ -4,9 +4,7 @@ import styles from "./ShipOverview.module.css";
 
 import temp_data from '../../data/data.json';
 
-import getData from '../../utils/data_functions'
-
-export default function ShipOverview({tab}) {
+export default function ShipOverview({tab, objectToArray}) {
     const [selectedTab, setSelectedTab] = useState(tab);
 
     const selectSubSystem = (event) => {
@@ -27,13 +25,8 @@ export default function ShipOverview({tab}) {
         return status_display;
     }
 
-    // TODO: make work without creating this extra array
-/*     let subsystems_array = [];
-    Object.keys(temp_data.ship_subsystems).forEach(subsystem_key => {
-        subsystems_array.push(temp_data.ship_subsystems[subsystem_key]);
-    }); */
 
-    const data = getData(temp_data.ship_subsystems);
+    const data = objectToArray(temp_data.ship_subsystems);
 
 
     return (

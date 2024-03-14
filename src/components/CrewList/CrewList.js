@@ -6,17 +6,9 @@ import CrewMember from "../CrewMember/CrewMember";
 
 import temp_data from '../../data/data.json';
 
-import getData from '../../utils/data_functions'
-
-export default function CrewList() {
+export default function CrewList({objectToArray}) {
     const [expandedMemberId, setExpandedMemberId] = useState();
     const [expanded, setExpanded] = useState(false);
-
-    // TODO: make work without creating this extra array
-   /*  let crew_member_array = [];
-    Object.keys(temp_data.crew_members).forEach(crew_member_key => {
-        crew_member_array.push(temp_data.crew_members[crew_member_key]);
-    }); */
 
     const toggleCrewMember = (id) => {
         id !== expandedMemberId ? setExpandedMemberId(id) : setExpandedMemberId();
@@ -25,7 +17,7 @@ export default function CrewList() {
     const toggleExpanded = () => {
         setExpanded(!expanded);
     }
-    const data = getData(temp_data.crew_members);
+    const data = objectToArray(temp_data.crew_members);
 
     return (
         <div className={`${styles.crewList} ${expanded ? styles.expandedPanel : ''}`}>

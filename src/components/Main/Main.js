@@ -2,7 +2,10 @@ import { useState } from "react";
 
 import globalStyles from "./global.css";
 import styles from "./Main.module.css";
+
+//utils
 import capitalizeFirstLetter from "../../utils/string_functions";
+import objectToArray from "../../utils/data_functions";
 
 import CrewList from "../CrewList/CrewList";
 import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
@@ -85,8 +88,8 @@ export default function Main() {
     if(currentPage === 'galaxy_map') {
         page_contents = 
             <div className={styles.galaxy_map}>
-                <CrewList/>
-                <XaroStatus changePage={changePage}/>
+                <CrewList objectToArray={objectToArray}/>
+                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
@@ -104,8 +107,8 @@ export default function Main() {
     } else if(currentPage === 'cluster_map') {
         page_contents = 
             <div className={styles.system_map}>
-                <CrewList/>
-                <XaroStatus changePage={changePage}/>
+                <CrewList objectToArray={objectToArray}/>
+                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
@@ -123,8 +126,8 @@ export default function Main() {
     } else if(currentPage === 'system_map') {
         page_contents = 
             <div className={styles.system_map}>
-                <CrewList/>
-                <XaroStatus changePage={changePage}/>
+                <CrewList objectToArray={objectToArray}/>
+                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
                 <div className={`${styles.sidePanel} ${sidePanelExpanded ? styles.expandedPanel : ''}`}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails currentCelestialBody={currentCelestialBody} changePlanet={displayCelestialBodyDetails}/>
@@ -149,9 +152,9 @@ export default function Main() {
     } else if(currentPage === 'ship_overview') {
         page_contents = 
             <div className={styles.shipOverview}>
-                <CrewList/>
+                <CrewList objectToArray={objectToArray}/>
                 <MainPanel breadCrumbPath={breadCrumbPath} changePage={changePage}>
-                    <ShipOverview tab={currentTab}/>
+                    <ShipOverview objectToArray={objectToArray} tab={currentTab}/>
                 </MainPanel>
                 <CelestialBodyDetails/>
             </div>

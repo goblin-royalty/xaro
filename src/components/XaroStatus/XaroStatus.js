@@ -2,10 +2,10 @@ import styles from "./XaroStatus.module.css";
 import ShipStatus from "../ShipStatus/ShipStatus";
 import AskXaro from "../AskXaro/AskXaro";
 
-export default function XaroStatus({changePage}) {
+export default function XaroStatus({changePage, objectToArray}) {
     return (
         <div className={styles.xaroStatus}>
-            <ShipStatus changePage={changePage}/>
+            <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
             <AskXaro/>
         </div>
     );
