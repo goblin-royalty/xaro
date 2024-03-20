@@ -1,26 +1,22 @@
 import { useState } from "react";
 
-import styles from "./CrewList.module.css";
-
+/* import styles from "./CrewList.module.css";
+ */
 import CrewMember from "../CrewMember/CrewMember";
 
 import temp_data from '../../data/data.json';
 
-export default function CrewList({objectToArray}) {
+export default function CrewList({objectToArray, expanded, position}) {
     const [expandedMemberId, setExpandedMemberId] = useState();
-    const [expanded, setExpanded] = useState(false);
 
     const toggleCrewMember = (id) => {
         id !== expandedMemberId ? setExpandedMemberId(id) : setExpandedMemberId();
     }
 
-    const toggleExpanded = () => {
-        setExpanded(!expanded);
-    }
     const data = objectToArray(temp_data.crew_members);
 
     return (
-        <div className={`${styles.crewList} ${expanded ? styles.expandedPanel : ''}`}>
+        <div /* className={`${styles.crewList} ${expanded ? styles.expandedPanel : ''}`} */>
             {data.map((crew_member) => (
                 <CrewMember
                     toggleCrewMember={toggleCrewMember}
@@ -29,8 +25,6 @@ export default function CrewList({objectToArray}) {
                     data={crew_member}
                 />
             ))}
-            <div className={styles.backgroundTexture}></div>
-            <div className={styles.mobileToggle} onClick={() => {toggleExpanded()}}>Crew</div>
         </div>
     );
 }
