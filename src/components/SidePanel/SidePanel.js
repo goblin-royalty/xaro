@@ -8,34 +8,24 @@ export default function SidePanel({ children, position }) {
     setExpanded(!expanded);
   };
 
-    return (
-      <div
-        className={`${styles.SidePanel}  ${
-          expanded ? styles.ExpandedPanel  : ""
-        }
-        ${
-          position === 'left' ?
-          styles.leftPanel :
-          styles.rightPanel
-        }
-      `}
-      >
-        {children}
-        <div className={styles.backgroundTexture}></div>
+  const sidePanelsAndExpanded = `
+   ${styles.SidePanel}  
+   ${expanded ? styles.ExpandedPanel : ""} 
+   ${position === 'left' ? styles.leftPanel : styles.rightPanel}
+  `;
 
-        <div
-          className={`${styles.mobileToggle} 
-          ${ position === 'left' ?
-          styles.leftToggle : 
-          styles.rightToggle
-        }
-        `}
-          onClick={() => {
-            toggleExpanded();
-          }}
-        >
-         {position === 'left' ? 'Crew' : 'Orbit'}
-        </div>
+  const mobileToggle = `
+    ${styles.mobileToggle}
+    ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
+  `;
+
+  return (
+    <div className={sidePanelsAndExpanded}>
+      {children}
+      <div className={styles.backgroundTexture}></div>
+      <div className={mobileToggle} onClick={() => {toggleExpanded();}}>
+        {position === 'left' ? 'Crew' : 'Orbit'}
       </div>
-    ); 
-  }
+    </div>
+  ); 
+}

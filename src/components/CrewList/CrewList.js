@@ -1,12 +1,10 @@
 import { useState } from "react";
 
-/* import styles from "./CrewList.module.css";
- */
 import CrewMember from "../CrewMember/CrewMember";
 
 import temp_data from '../../data/data.json';
 
-export default function CrewList({objectToArray, expanded, position}) {
+export default function CrewList({objectToArray}) {
     const [expandedMemberId, setExpandedMemberId] = useState();
 
     const toggleCrewMember = (id) => {
@@ -16,7 +14,7 @@ export default function CrewList({objectToArray, expanded, position}) {
     const data = objectToArray(temp_data.crew_members);
 
     return (
-        <div /* className={`${styles.crewList} ${expanded ? styles.expandedPanel : ''}`} */>
+        <div>
             {data.map((crew_member) => (
                 <CrewMember
                     toggleCrewMember={toggleCrewMember}
