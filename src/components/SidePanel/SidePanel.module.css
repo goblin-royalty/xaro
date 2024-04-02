@@ -72,6 +72,14 @@
   box-shadow: none;
   transition: 0.2s ease-in-out;
 }
+
+.focusedLeftPanel {
+  margin-left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 .leftToggle{
   margin-left: 15rem;
   left: 0rem;

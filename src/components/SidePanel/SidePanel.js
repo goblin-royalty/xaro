@@ -1,7 +1,7 @@
 import styles from "./SidePanel.module.css";
 import { useState } from "react";
 
-export default function SidePanel({ children, position }) {
+export default function SidePanel({ children, position, focused }) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -12,6 +12,7 @@ export default function SidePanel({ children, position }) {
    ${styles.SidePanel}  
    ${expanded ? styles.ExpandedPanel : ""} 
    ${position === 'left' ? styles.leftPanel : styles.rightPanel}
+   ${focused === 'left' ? styles.focusedLeftPanel : styles.focusedRightPanel}
   `;
 
   const mobileToggle = `
