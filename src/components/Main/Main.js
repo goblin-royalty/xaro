@@ -13,7 +13,8 @@ import SidePanel from "../SidePanel/SidePanel";
 import CrewList from "../CrewList/CrewList";
 import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
 
-import XaroStatus from "../XaroStatus/XaroStatus";
+import ShipStatus from "../ShipStatus/ShipStatus";
+import AskXaro from "../AskXaro/AskXaro";
 import MainPanel from "../MainPanel/MainPanel";
 import ShipOverview from "../ShipOverview/ShipOverview";
 import CurrentLocation from "../CurrentLocation/CurrentLocation";
@@ -112,7 +113,8 @@ export default function Main() {
                 <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
                 <SidePanel position='right' focused={false}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
@@ -130,7 +132,8 @@ export default function Main() {
                 <SidePanel position='left' focused={false}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
                 <SidePanel position='right' focused={false}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
@@ -149,7 +152,8 @@ export default function Main() {
                 <SidePanel position='left' focused={false}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
                 <SidePanel position='right' focused={false}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails currentCelestialBody={currentCelestialBody} changePlanet={displayCelestialBodyDetails}/>

@@ -1,7 +1,10 @@
 .askXaroContainer {
-    position: relative;
-    margin-bottom: 2rem;
-}
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+} 
 .resultsContainer {
     position: absolute;
     display: flex;

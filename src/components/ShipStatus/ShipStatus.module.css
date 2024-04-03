@@ -1,4 +1,7 @@
 .shipStatus {
+    top:0rem;
+    left: 50%;
+    transform: translate(-50%, 0);
     width: 60rem;
     overflow: hidden;
     background: #071113;
@@ -6,7 +9,7 @@
     height: 5rem;
     text-align: center;
     box-shadow: 0px 12px 1px 1px #00000059;
-    position: relative;
+    position: absolute;
     border-radius: 0.5rem;
     z-index: 1;
 }
