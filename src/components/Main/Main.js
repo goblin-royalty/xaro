@@ -39,18 +39,16 @@ export default function Main() {
             else {setPanelFocused(position)}}
 
     const { ref: documentRef } = useSwipeable({
-        onSwipedLeft: ({dir, event }) => {focusedPanel('right');       
+        onSwipedLeft: () => {focusedPanel('right');       
         },
-        onSwipedRight: ({dir, event }) => {focusedPanel('left');
+        onSwipedRight: () => {focusedPanel('left');
         },
-        onSwipedDown: ({dir, event }) => {focusedPanel('top');         
+        onSwipedDown: () => {focusedPanel('top');         
         },
-        onSwipedUp: ({dir, event }) => {focusedPanel('bottom');
+        onSwipedUp: () => {focusedPanel('bottom');
         },
         preventDefaultTouchmoveEvent: true,
     });
-
-   
 
     // attach swipeable to document
     useEffect(() => {
@@ -122,9 +120,6 @@ export default function Main() {
                 <CelestialBody click={zoomToCluster} position={{top: '46vh', left: '32vw'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
                 <CelestialBody click={zoomToCluster} position={{top: '68vh', left: '50vw'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
                 <CelestialBody click={zoomToCluster} position={{top: '28vh', left: '61vw'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
-{/*          TODO:       <div className={styles.galaxy_map_background}></div>
- */}{/*                 <img alt={galaxy_map_background} className={styles.galaxy_map_background} src={galaxy_map_background}/> */}
-
             </div>
         ;
     } else if(currentPage === 'cluster_map') {
