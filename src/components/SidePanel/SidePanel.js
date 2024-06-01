@@ -1,7 +1,5 @@
 import styles from "./SidePanel.module.css";
 import { useState } from "react";
-import { useSwipeable } from "react-swipeable";
-
 
 export default function SidePanel({ children, position, focused }) {
   const [expanded, setExpanded] = useState(false);
@@ -11,21 +9,19 @@ export default function SidePanel({ children, position, focused }) {
   };
 
 
-
+/* change position and focused to switch - case later */
 
   const sidePanelsAndExpanded = `
    ${styles.SidePanel}  
-   ${expanded ? styles.ExpandedPanel : ""} 
+   ${expanded ? styles.ExpandedPanel : ""}   
    ${position === 'left' ? styles.leftPanel : styles.rightPanel}
    ${focused === 'left' ? styles.focusedLeftPanel :
    focused === 'right' ? styles.focusedRightPanel :
    focused === 'top' ? styles.focusedTopPanel  : 
    focused === 'bottom' ? styles.focusedBottomPanel : 
-   focused === 'home' ? '': ''}
-   
-   
+   focused === 'home' ? '': ''};   
 
-  `;
+`;
 
   const mobileToggle = `
     ${styles.mobileToggle}
