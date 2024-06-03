@@ -13,14 +13,13 @@ import SidePanel from "../SidePanel/SidePanel";
 import CrewList from "../CrewList/CrewList";
 import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
 
-import XaroStatus from "../XaroStatus/XaroStatus";
+import ShipStatus from "../ShipStatus/ShipStatus";
+import AskXaro from "../AskXaro/AskXaro";
 import MainPanel from "../MainPanel/MainPanel";
 import ShipOverview from "../ShipOverview/ShipOverview";
 import CurrentLocation from "../CurrentLocation/CurrentLocation";
 
 import CelestialBody from "../CelestialBody/CelestialBody";
-
-import galaxy_map_background from "../../icons/galaxy_map.jpg";
 
 export default function Main() {
     const [currentPage, setCurrentPage] = useState('galaxy_map');
@@ -33,30 +32,28 @@ export default function Main() {
 
     const [panelFocused, setPanelFocused] = useState('');
 
-    const { ref: documentRef } = useSwipeable({
-        onSwiped: ({ dir, event }) => {
-            console.log('did a swipe');
+    const focusedPanel = (position) => {
+        if (panelFocused !== '' && panelFocused !== position) {setPanelFocused('')}
+            else {setPanelFocused(position)}}
+
+     const { ref: documentRef } = useSwipeable({
+        onSwipedLeft: () => {focusedPanel('right');       
         },
-        onSwipedLeft: ({dir, event }) => {
-            console.log('did a left swipe');
-            // setPanelFocused('right');
+        onSwipedRight: () => {focusedPanel('left');
         },
-        onSwipedRight: ({dir, event }) => {
-            console.log('did a right swipe');
-            setPanelFocused('left');
+        onSwipedDown: () => {focusedPanel('top');
         },
-        onSwipedDown: ({dir, event }) => {
-            console.log('did a down swipe');
-        },
-        preventDefaultTouchmoveEvent: true
-    });
+        onSwipedUp: () => {focusedPanel('bottom');
+        }, 
+        preventDefaultTouchmoveEvent: true,
+   });
 
     // attach swipeable to document
     useEffect(() => {
         documentRef(document);
         // Clean up swipeable event listeners
         return () => documentRef({});
-    });
+    }); 
 
     const displayCelestialBodyDetails = (new_celestial_body) => {
         setCurrentCelestialBody(new_celestial_body);
@@ -112,26 +109,26 @@ export default function Main() {
                 <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
-                <SidePanel position='right' focused={false}>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
+                <SidePanel position='right' focused={panelFocused}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
                 </SidePanel>
-                <CelestialBody click={zoomToCluster} position={{top: '46vh', left: '32vw'}} iconStyles={{width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
-                <CelestialBody click={zoomToCluster} position={{top: '68vh', left: '50vw'}} iconStyles={{width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
-                <CelestialBody click={zoomToCluster} position={{top: '28vh', left: '61vw'}} iconStyles={{width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
-
-                <img alt={galaxy_map_background} className={styles.galaxy_map_background} src={galaxy_map_background}/>
+                <CelestialBody click={zoomToCluster} position={{top: '46vh', left: '32vw'}} iconStyles={{borderColor: 'white', width: '4rem', height: '3rem', transform: 'rotate(71deg)'}} type="cluster" name="Sector 12" tooltip="Sector 12"/>
+                <CelestialBody click={zoomToCluster} position={{top: '68vh', left: '50vw'}} iconStyles={{borderColor: 'white', width: '7rem', height: '3rem', transform: 'rotate(349deg)'}} type="cluster" name="Sector 01" tooltip="Sector 01"/>
+                <CelestialBody click={zoomToCluster} position={{top: '28vh', left: '61vw'}} iconStyles={{borderColor: 'white', width: '4rem', height: '4rem', transform: 'rotate(300deg)'}} type="cluster" name="Sector 87" tooltip="Sector 87"/>
             </div>
         ;
     } else if(currentPage === 'cluster_map') {
         page_contents = 
             <div className={styles.system_map}>
-                <SidePanel position='left' focused={false}>
+                <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
-                <SidePanel position='right' focused={false}>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
+                <SidePanel position='right' focused={panelFocused}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails/>
                 </SidePanel>
@@ -146,11 +143,12 @@ export default function Main() {
     } else if(currentPage === 'system_map') {
         page_contents = 
             <div className={styles.system_map}>
-                <SidePanel position='left' focused={false}>
+                <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <XaroStatus objectToArray={objectToArray} changePage={changePage}/>
-                <SidePanel position='right' focused={false}>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <AskXaro/>
+                <SidePanel position='right' focused={panelFocused}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>
                     <CelestialBodyDetails currentCelestialBody={currentCelestialBody} changePlanet={displayCelestialBodyDetails}/>
                 </SidePanel>
@@ -173,13 +171,13 @@ export default function Main() {
     } else if(currentPage === 'ship_overview') {
         page_contents = 
             <div className={styles.shipOverview}>
-                <SidePanel position='left' focused={false}>
+                <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
                 <MainPanel breadCrumbPath={breadCrumbPath} changePage={changePage}>
                     <ShipOverview objectToArray={objectToArray} tab={currentTab}/>
                 </MainPanel>
-                <SidePanel position='right' focused={false}>
+                <SidePanel position='right' focused={panelFocused}>
                     <CurrentLocation/>
                     <CelestialBodyDetails/>
                 </SidePanel>

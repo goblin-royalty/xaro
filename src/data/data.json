@@ -87,7 +87,7 @@
             "name": "Sensors",
             "status": "Online",
             "current" : "Minimal",
-            "value": "Atmospheric penetration if conditions are clear",
+            "value": "Heavily Limited",
             "details": "Sensor speed is limited to C. Minimal sensors are still able to detect any and all kodning and dimezii through any non-shielded material. Detection of everything else cannot penetrate more than 1 meter of most solids (0.1 meters for metals and high-density materials), 1 km of most liquids and 100 km of most gasses. Electromagnetic disruption is possible",
             "id" : "5"
         },

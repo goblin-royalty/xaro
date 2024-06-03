@@ -15,8 +15,12 @@ body {
     height: 100%;
     color: #ddd;
     overflow: hidden;
+    
 }
 .galaxy_map {
+    background-image: url('../../../public/galaxy_map.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -25,11 +29,14 @@ body {
     align-items: center;
 }
 
-.galaxy_map_background {
+/* .galaxy_map_background {
+    background-image: url('../../../public/galaxy_map.jpg');
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
     position: absolute;
     width: 100%;
     height: 100%;
-}
+} */
 
 .shipOverview {
     width: 100%;
@@ -135,10 +142,10 @@ body {
     height: 100vh;
     background-image: url('../../../public/nebula_1.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
     html {
         font-size: 11px;
     }
@@ -146,4 +153,23 @@ body {
         top: 19.5vh;
         left: 12.3vw;
     }
+}
+@media (max-width: 500px) {
+
+    .galaxy_map {
+        background-image: url('../../../public/galaxy_map.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: auto 135vh;
+    };
+
+    .cluster_map {
+        background-image: url('../../../public/nebula_1.jpg');
+        background-size: auto 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+    };
 }
