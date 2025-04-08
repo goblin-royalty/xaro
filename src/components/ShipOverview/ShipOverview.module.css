@@ -1,10 +1,7 @@
 .ShipOverview {
-    position: absolute;
-    width: 66vw;
-    height: 67vh;
-    z-index: 1;
+    width: 100%;
     overflow: auto;
-    
+    transition: 0.2s ease-in-out;
 }
 
 .shipSubSystem {
@@ -25,8 +22,6 @@
     flex-direction: unset;
     align-items: start;
     height: auto;
-    
-
 }
 
 .detailedInfo {
@@ -76,11 +71,9 @@
     }
 
     .ShipOverview {
-        width: 80vw;
-        height: 70vh;
+        width: 100%;
         border-radius: 0.5px;
         overflow: auto;   
-        
     }
 
     .shipSubSystem {

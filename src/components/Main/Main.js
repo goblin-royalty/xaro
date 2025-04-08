@@ -10,6 +10,8 @@ import capitalizeFirstLetter from "../../utils/string_functions";
 import objectToArray from "../../utils/data_functions";
 
 import SidePanel from "../SidePanel/SidePanel";
+import TopPanel from "../TopPanel/TopPanel";
+
 import CrewList from "../CrewList/CrewList";
 import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
 
@@ -33,17 +35,27 @@ export default function Main() {
     const [panelFocused, setPanelFocused] = useState('');
 
     const focusedPanel = (position) => {
-        if (panelFocused !== '' && panelFocused !== position) {setPanelFocused('')}
-            else {setPanelFocused(position)}}
+        if (panelFocused !== '' && panelFocused !== position) {
+            // if one side panel is focused as we swipe to the other side this stop the opposite panel from being focused
+            setPanelFocused('');
+        }
+        else {
+            setPanelFocused(position)
+        }
+    }
 
-     const { ref: documentRef } = useSwipeable({
-        onSwipedLeft: () => {focusedPanel('right');       
+    const { ref: documentRef } = useSwipeable({
+        onSwipedLeft: () => {
+            focusedPanel('right');       
         },
-        onSwipedRight: () => {focusedPanel('left');
+        onSwipedRight: () => {
+            focusedPanel('left');
         },
-        onSwipedDown: () => {focusedPanel('top');
+        onSwipedDown: () => {
+            focusedPanel('top');
         },
-        onSwipedUp: () => {focusedPanel('bottom');
+        onSwipedUp: () => {
+            focusedPanel('bottom');
         }, 
         preventDefaultTouchmoveEvent: true,
    });
@@ -106,10 +118,13 @@ export default function Main() {
     if(currentPage === 'galaxy_map') {
         page_contents = 
             <div className={styles.galaxy_map}>
+                <TopPanel focused={panelFocused}>
+                    <ShipOverview objectToArray={objectToArray} tab={currentTab}/>
+                </TopPanel>
                 <SidePanel position='left' focused={panelFocused}>
                     <CrewList objectToArray={objectToArray}/>
                 </SidePanel>
-                <ShipStatus objectToArray={objectToArray} changePage={changePage}/>
+                <ShipStatus objectToArray={objectToArray} changePage={changePage} focused={panelFocused}/>
                 <AskXaro/>
                 <SidePanel position='right' focused={panelFocused}>
                     <CurrentLocation click={changePage} currentPage={currentPage} currentGalaxy={currentGalaxy} currentCluster={currentCluster} currentSystem={currentSystem}/>

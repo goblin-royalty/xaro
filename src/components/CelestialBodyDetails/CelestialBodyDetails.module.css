@@ -46,3 +46,9 @@ p > span {
 .valuableResource {
     color: #A8E6EF;
 }
+
+@media (max-width: 500px) {
+    .planetInfo {
+        width: 16.2rem;
+    }
+}

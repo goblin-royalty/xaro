@@ -2,39 +2,41 @@ import styles from "./SidePanel.module.css";
 import { useState } from "react";
 
 export default function SidePanel({ children, position, focused }) {
-  const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
-  const toggleExpanded = () => {
-    setExpanded(!expanded);
-  };
+    const toggleExpanded = () => {
+        setExpanded(!expanded);
+    };
 
+    const createExpansionStyles = () => {
+        let expandedStyles = '';
+        if(expanded || (focused === position)){
+            expandedStyles = styles.ExpandedPanel;
+        }
 
-/* change position and focused to switch - case later */
+        return expandedStyles;
+    }
 
-  const sidePanelsAndExpanded = `
-   ${styles.SidePanel}  
-   ${expanded ? styles.ExpandedPanel : ""}   
-   ${position === 'left' ? styles.leftPanel : styles.rightPanel}
-   ${focused === 'left' ? styles.focusedLeftPanel :
-   focused === 'right' ? styles.focusedRightPanel :
-   focused === 'top' ? styles.focusedTopPanel  : 
-   focused === 'bottom' ? styles.focusedBottomPanel : 
-   focused === 'home' ? '': ''};   
+    const expandedStyle = createExpansionStyles();
+   
+    const sidePanelStyles = `
+        ${styles.SidePanel}  
+        ${expandedStyle}   
+        ${position === 'left' ? styles.leftPanel : styles.rightPanel}
+    `;
 
-`;
+    const mobileToggle = `
+        ${styles.mobileToggle}
+        ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
+    `;
 
-  const mobileToggle = `
-    ${styles.mobileToggle}
-    ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
-  `;
-
-  return (
-    <div className={sidePanelsAndExpanded}>
-      {children}
-      <div className={styles.backgroundTexture}></div>
-      <div className={mobileToggle} onClick={() => {toggleExpanded();}}>
-        {position === 'left' ? 'Crew' : 'Orbit'}
-      </div>
-    </div>
-  ); 
+    return (
+        <div className={sidePanelStyles}>
+        {children}
+        <div className={styles.backgroundTexture}></div>
+        <div className={mobileToggle} onClick={() => {toggleExpanded();}}>
+            {position === 'left' ? 'Crew' : 'Orbit'}
+        </div>
+        </div>
+    ); 
 }

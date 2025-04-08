@@ -64,7 +64,7 @@ export default function AskXaro() {
                 value={xaroInput}
                 onChange={handleChange}
                 type="text"
-                placeholder="Ask"
+                placeholder="Ask X'aro"
                 className={styles.askXaro}>
             </input>
         </div>

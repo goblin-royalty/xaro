@@ -3,12 +3,17 @@ import ShipSystem from "../ShipSystem/ShipSystem";
 import KodningReserves from "../KodningReserves/KodningReserves";
 
 import temp_data from '../../data/data.json';
-export default function ShipStatus({changePage, objectToArray}) {
+export default function ShipStatus({changePage, objectToArray, focused}) {
 
     const data = objectToArray(temp_data.ship_subsystems);
 
+    const shipStatusStyles = `
+        ${styles.shipStatus}  
+        ${focused === 'top' ? styles.hiddenShipStatus : ''}   
+    `;
+
     return (
-        <div className={styles.shipStatus}>
+        <div className={shipStatusStyles}>
             <div className={styles.subSystemDisplay}>
                 {data.map(subsystem => (
                     <ShipSystem

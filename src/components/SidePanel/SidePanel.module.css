@@ -55,7 +55,6 @@
   /* ---------- RIGHT SIDE -------------*/
 
 .rightPanel{
-  right: 2rem;
 }
 
 .rightSidePanel::-webkit-scrollbar {
@@ -64,121 +63,72 @@
 
 
 @media (max-width: 1000px) {
-  /* ----------LEFT SIDE MOBILE Landscape -------------*/
+    .SidePanel {
+        width: 18.2rem;
+    }
 
-.leftPanel {
-  margin-left: -15rem;
-  box-shadow: none;
-  transition: 0.2s ease-in-out;
-}
-/* 
-.focusedLeftPanel {
-  margin-left: 0rem;
-  box-shadow: none;
-  transition: 0.2s ease-in-out;
+    /* ----------LEFT SIDE MOBILE Landscape -------------*/
 
-  margin-left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute; 
-}*/
+    .leftPanel {
+    margin-left: -18.2rem;
+    box-shadow: none;
+    transition: 0.2s ease-in-out;
+    }
 
-.leftToggle{
-  margin-left: 15rem;
-  left: 0rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  
-}
+    .leftToggle{
+    margin-left: 18.2rem;
+    left: 0rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    
+    }
 
-  /* ----------RIGHT SIDE MOBILE -------------*/
+    /* ----------RIGHT SIDE MOBILE -------------*/
 
+    .rightPanel {
+        margin-right: -18.2rem;
+        transition: 0.2s ease-in-out;
+    }
 
-.rightPanel {
-   margin-right: -17rem;
-   transition: 0.2s ease-in-out;
-}
-.focusedRightPanel {
-  margin-right: 0rem;
-  box-shadow: none;
-  transition: 0.2s ease-in-out;
-}
+    .rightPanel > div {
+        box-shadow: none;
+    }
+    .rightToggle{
+        margin-right: 15rem;  
+        right: 0rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
 
-.rightPanel > div {
-  box-shadow: none;
-}
-.rightToggle{
-  margin-right: 15rem;  
-  right: 0rem;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
+    /* Both */
 
+    .ExpandedPanel {
+    margin: 0;
+    } 
 
-/* Both */
-
-.ExpandedPanel {
-  margin: 0;
-  } 
-
-.mobileToggle {
-  display: flex;
-}
+    .mobileToggle {
+    display: flex;
+    }
 }
 
 @media (max-width: 500px) {
 
 /* needed later for swiping and fullscreen panels */
 
-/*   .focusedLeftPanel {
-    display: block;
-    top: 15vh;
-    width: 85vw;
-    height: 75vh;
-    border-radius: 1rem;
-    left: 50%;
-    transform: translate(-50%, 0); 
-    margin-left: 0rem;
-    box-shadow: none;
-    transition: 0.2s ease-in-out;
-    position: absolute;
-
-    .leftToggle{
-      display: none;
-    }
-  
-  } */
-  
   .leftToggle{
-    margin-left: 15rem;
+    margin-left: 18.2rem;
     left: 0rem;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     
   }
-
-  /* needed later for swiping and fullscreen panels */
-    .focusedRightPanel {
-    display: block;
-    top: 15vh;
-    width: 85vw;
-    height: 75vh;
-    border-radius: 1rem;
-    right: 50%;
-    transform: translate(-50%, 0); 
-    margin-right: 0rem;
-    box-shadow: none;
-    transition: 0.2s ease-in-out;
-    position: absolute;
-
-  }  
   
   .rightPanel > div {
     box-shadow: none;
     display: flex;
   }
   .rightToggle{
-    margin-right: 15rem;  
+    margin-right: 18.2rem;  
     right: 0rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;

@@ -1,5 +1,5 @@
 .shipStatus {
-    top:0rem;
+    top:0;
     left: 50%;
     transform: translate(-50%, 0);
     width: 60rem;
@@ -12,6 +12,11 @@
     position: absolute;
     border-radius: 0.5rem;
     z-index: 1;
+    transition: 0.2s ease-in-out;
+}
+
+.hiddenShipStatus {
+    top: -100%;
 }
 
 .backgroundTexture {
@@ -37,7 +42,6 @@
 
 @media(max-width:1000px) {
     .shipStatus {
-        top:0rem;
         left: 50%;
         transform: translate(-50%, 0);
         width: 40rem;
@@ -76,7 +80,6 @@
 @media(max-width:500px){
 
     .shipStatus {
-        top:0rem;
         width:100%;
         height: 6vh;
         overflow: hidden;

@@ -85,3 +85,9 @@
         filter: brightness(1);
     }
 }
+
+@media (max-width: 500px) {
+    .currentLocation {
+        width: 16.2rem;
+    }
+}
