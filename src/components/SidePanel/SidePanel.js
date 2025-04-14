@@ -8,26 +8,16 @@ export default function SidePanel({ children, position, focused }) {
         setExpanded(!expanded);
     };
 
-    const createExpansionStyles = () => {
-        let expandedStyles = '';
-        if(expanded || (focused === position)){
-            expandedStyles = styles.ExpandedPanel;
-        }
-
-        return expandedStyles;
-    }
-
-    const expandedStyle = createExpansionStyles();
-   
     const sidePanelStyles = `
         ${styles.SidePanel}  
-        ${expandedStyle}   
+        ${expanded || (focused === position) ? styles.ExpandedPanel : ''}   
         ${position === 'left' ? styles.leftPanel : styles.rightPanel}
     `;
-
+    console.log(focused !== '')
     const mobileToggle = `
         ${styles.mobileToggle}
         ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
+        ${(focused !== '') ? styles.hiddenToggle : ''}
     `;
 
     return (

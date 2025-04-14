@@ -1,137 +1,121 @@
 /* ----------- BOTH SIDES ---------- */
-.SidePanel{
-  width: 15rem;
-  display: flex;
-  padding: 0rem;
-  height: 35rem;
-  border-radius: 0.5rem;
-  position: relative;
-  z-index: 2;
-  flex-direction: column;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+.SidePanel {
+    width: 15rem;
+    display: flex;
+    padding: 0rem;
+    height: 35rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .mobileToggle {
-  position: absolute;
-  top: 18rem;
-  display: none;
-  width: 2rem;
-  background: #071113;
-  height: 8rem;
-  margin-top: -4rem;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 1.6rem;
-  z-index: 1;
+    position: absolute;
+    top: 18rem;
+    display: none;
+    width: 2rem;
+    background: #171717;
+    height: 8rem;
+    margin-top: -4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 1.6rem;
+    z-index: 1;
 }
 
-.backgroundTexture {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-image: url(../../../public/texture_1.jfif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 49% 0%;
-  opacity: 0.09;
+/* ---------- LEFT SIDE -------------*/
+
+.leftPanel {
+    background: #0d0d0d;
+    left: 0rem;
+    box-shadow: 15px 14px #00000059;
 }
 
-
-  /* ---------- LEFT SIDE -------------*/
-
-.leftPanel{
-  background: #071113;
-  left: 0rem;
-  box-shadow: 15px 14px #00000059;
-}
-  /* ---------- RIGHT SIDE -------------*/
-
-.rightPanel{
-}
+/* ---------- RIGHT SIDE -------------*/
 
 .rightSidePanel::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 
 @media (max-width: 1000px) {
     .SidePanel {
         width: 18.2rem;
+        transition: height 0.1s, width 0.1s;
+        transition-timing-function: ease-in-out;
     }
 
     /* ----------LEFT SIDE MOBILE Landscape -------------*/
 
     .leftPanel {
-    margin-left: -18.2rem;
-    box-shadow: none;
-    transition: 0.2s ease-in-out;
+        margin-left: -18.2rem;
+        box-shadow: none;
     }
 
-    .leftToggle{
-    margin-left: 18.2rem;
-    left: 0rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    
+    .leftToggle {
+        margin-left: 18.2rem;
+        left: 0rem;
+
     }
 
     /* ----------RIGHT SIDE MOBILE -------------*/
 
     .rightPanel {
         margin-right: -18.2rem;
-        transition: 0.2s ease-in-out;
     }
 
-    .rightPanel > div {
+    .rightPanel>div {
         box-shadow: none;
     }
-    .rightToggle{
-        margin-right: 15rem;  
+
+    .rightToggle {
+        margin-right: 15rem;
         right: 0rem;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
     }
 
     /* Both */
 
     .ExpandedPanel {
-    margin: 0;
-    } 
+        width: 100%;
+        flex: none;
+        height: 82vh;
+        top: 2.3rem;
+        margin: 0;
+    }
 
     .mobileToggle {
-    display: flex;
+        display: flex;
     }
 }
 
 @media (max-width: 500px) {
 
-/* needed later for swiping and fullscreen panels */
+    /* needed later for swiping and fullscreen panels */
 
-  .leftToggle{
-    margin-left: 18.2rem;
-    left: 0rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    
-  }
-  
-  .rightPanel > div {
-    box-shadow: none;
-    display: flex;
-  }
-  .rightToggle{
-    margin-right: 18.2rem;  
-    right: 0rem;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-  } 
+    .leftToggle {
+        margin-left: 18.2rem;
+        left: 0rem;
+    }
+    .rightPanel > div {
+        box-shadow: none;
+        display: flex;
+    }
+    .rightToggle {
+        margin-right: 18.2rem;
+        right: 0rem;
+    }
+    .SidePanel > div.hiddenToggle {
+        display: none;
+    }
 
 }

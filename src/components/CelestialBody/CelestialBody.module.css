@@ -43,8 +43,8 @@
 }
 .focus_corner {
     position: absolute;
-    border-top: 3px solid #071113;
-    border-left: 3px solid #071113;
+    border-top: 3px solid #171717;
+    border-left: 3px solid #171717;
     height: 1rem;
     width: 1rem;
 }

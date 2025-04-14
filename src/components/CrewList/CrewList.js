@@ -4,6 +4,8 @@ import CrewMember from "../CrewMember/CrewMember";
 
 import temp_data from '../../data/data.json';
 
+import styles from "./CrewList.module.css";
+
 export default function CrewList({objectToArray}) {
     const [expandedMemberId, setExpandedMemberId] = useState();
 
@@ -14,7 +16,7 @@ export default function CrewList({objectToArray}) {
     const data = objectToArray(temp_data.crew_members);
 
     return (
-        <div>
+        <div className={styles.crewList}>
             {data.map((crew_member) => (
                 <CrewMember
                     toggleCrewMember={toggleCrewMember}

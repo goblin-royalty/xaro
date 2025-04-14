@@ -11,7 +11,7 @@
     flex-direction: column;
     bottom: 4rem;
     width: 32rem;
-    background: #071113cf;
+    background: #0d0d0d;
     align-items: center;
     border-radius: 0.5rem;
 }
@@ -31,14 +31,24 @@
 .askXaro {
     width: 30rem;
     margin-top: 39rem;
-    background: #071113;
+    background: #0d0d0d;
     padding: 1rem;
     font-size: 1.7rem;
-    border-radius: 0.5rem;
     border: none;
     text-align: center;
     color: #ddd;
     box-shadow: 0px 12px 1px 1px #00000059;
+}
+.xaroCube {
+    width: 0;
+    height: 0;
+    background: #0d0d0d;
+    position: absolute;
+}
+
+@keyframes xaro_cube_spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
 }
 
 @media (max-width: 1000px){
@@ -47,7 +57,30 @@
     }
     .askXaro {
         margin-top: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+    }
+    .xaroExpandedContainer {
+        top: 36.3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .xaroExpandedContainer > .askXaro {
+        background: transparent;
+        z-index: 2;
+        box-shadow: none;
+        height: 17rem;
+        width: 17rem;
+    }
+    .xaroExpandedContainer > .xaroCube {
+        z-index: 1;
+        padding: 1rem;
+        height: 17rem;
+        width: 17rem;
+        box-shadow: 0px 0px 9px 11px #00000094;
+
+        animation-name: xaro_cube_spin;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
     }
 }

@@ -4,7 +4,7 @@ import styles from "./AskXaro.module.css";
 
 import temp_data from '../../data/data.json';
 
-export default function AskXaro() {
+export default function AskXaro({focused}) {
     const [xaroInput, setXaroInput] = useState('');
     const [searchResults, setSearchResults] = useState([]);
 
@@ -55,8 +55,15 @@ export default function AskXaro() {
         return results;
     }
 
+    const containerStyles = `
+        ${styles.askXaroContainer}
+        ${focused === 'bottom' ? styles.xaroExpandedContainer : ''}
+    `;
+
+    const inputPlaceholder = focused === 'bottom' ? 'Yes?' : `Ask X'aro`;
+
     return (
-        <div className={styles.askXaroContainer}>
+        <div className={containerStyles}>
             <div className={styles.resultsContainer}>
                 {displayResults()}
             </div>
@@ -64,9 +71,10 @@ export default function AskXaro() {
                 value={xaroInput}
                 onChange={handleChange}
                 type="text"
-                placeholder="Ask X'aro"
+                placeholder={inputPlaceholder}
                 className={styles.askXaro}>
             </input>
+            <div className={styles.xaroCube}></div>
         </div>
     );
 }
