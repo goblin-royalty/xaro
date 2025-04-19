@@ -1,6 +1,6 @@
 import styles from "./CrewMember.module.css";
 
-export default function CrewMember({toggleCrewMember, expanded, data : {id, first_name, last_name, rank, race, type, status, expertise}}) {
+export default function CrewMember({toggleCrewMember, expanded, data : {id, first_name, last_name, crew_rank, race, composition, current_status, expertise}}) {
 
     let crew_member_info;
     if(expanded) {
@@ -8,10 +8,10 @@ export default function CrewMember({toggleCrewMember, expanded, data : {id, firs
             <div className={styles.crewMemberSection}>
                 <h3 onClick={() => toggleCrewMember(id)} className={styles.crewMemberTitle}>{first_name} {last_name}</h3>
                 <div className={styles.crewMemberContainer}>
-                    <p>Rank : <span>{rank}</span></p>
+                    <p>Rank : <span>{crew_rank}</span></p>
                     <p>Race : <span>{race}</span></p>
-                    <p>Type : <span>{type}</span></p>
-                    <p>Status : <span>{status}</span></p>
+                    <p>Type : <span>{composition}</span></p>
+                    <p>Status : <span>{current_status}</span></p>
                     <p>Expertise : <span>{expertise}</span></p>
                 </div>
             </div>;

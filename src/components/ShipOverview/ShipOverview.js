@@ -1,10 +1,14 @@
+"use client";
+
+import objectToArray from "../../utils/data_functions";
+
 import { useState } from "react";
 
 import styles from "./ShipOverview.module.css";
 
-import temp_data from '../../data/data.json';
+import temp_data from '../../data_old/data.json';
 
-export default function ShipOverview({tab, objectToArray}) {
+export default function ShipOverview({tab}) {
     const [selectedTab, setSelectedTab] = useState(tab);
 
     const selectSubSystem = (event) => {

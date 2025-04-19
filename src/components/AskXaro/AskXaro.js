@@ -1,8 +1,10 @@
+"use client";
+
 import { useState } from "react";
 
 import styles from "./AskXaro.module.css";
 
-import temp_data from '../../data/data.json';
+import temp_data from '../../data_old/data.json';
 
 export default function AskXaro({focused}) {
     const [xaroInput, setXaroInput] = useState('');

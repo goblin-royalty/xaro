@@ -7,15 +7,14 @@
 
 .ShipStatusBackground {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0,0,0, 0.4);
     position: fixed;
     background-image: url('../../../public/xaro_second_try.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position-x: -8.4rem;
-    background-position-y: -3rem;
-    background-size: 69vh;
+    background-position: center;
+    background-size: cover;
 
     animation-name: xaro_static;
     animation-duration: 30s;

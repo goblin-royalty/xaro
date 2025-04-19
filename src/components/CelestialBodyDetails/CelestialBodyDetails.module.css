@@ -20,14 +20,14 @@
     display: none;
 }
 
-h2 {
+.title {
     width: 100%;
     margin-top: 0;
 }
-p {
+.detail {
     margin: 0 0 1.4rem 0;
 }
-p > span {
+.detail > span {
     color: #D4ADCF;
 }
 .valuableResource {
