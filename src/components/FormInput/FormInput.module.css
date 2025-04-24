@@ -1,0 +1,17 @@
+.askXaro {
+    width: 30rem;
+    margin-top: 39rem;
+    background: #0d0d0d;
+    padding: 1rem;
+    font-size: 1.7rem;
+    border: none;
+    text-align: center;
+    color: #ddd;
+    box-shadow: 0px 12px 1px 1px #00000059;
+}
+
+@media (max-width: 1000px){
+    .askXaro {
+        margin-top: 0;
+    }
+}

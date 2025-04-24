@@ -1,12 +1,14 @@
 "use client";
 
-import styles from "./TopPanel.module.css";
+import styles from "./BottomPanel.module.css";
 
 import { useState, useEffect } from "react";
 
 import { useSwipeable } from "react-swipeable";
 
-export default function TopPanel({children}) {
+export default function BottomPanel({children}) {
+    // const [xaroInput, setXaroInput] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
     const [panelFocused, setPanelFocused] = useState('');
 
     // attach swipeable to document
@@ -41,27 +43,15 @@ export default function TopPanel({children}) {
             setPanelFocused(position)
         }
     }
-
-    const createExpansionStyles = () => {
-        let expandedStyles = '';
-        if(panelFocused === 'top'){
-            expandedStyles = styles.expandedTopPanel;
-        }
-
-        return expandedStyles;
-    }
-    
-    const expandedStyle = createExpansionStyles();
-
-    const topPanelStyles = `
-            ${styles.TopPanel}  
-            ${expandedStyle}   
+    const containerStyles = `
+        ${styles.askXaroContainer}
+        ${panelFocused === 'bottom' ? styles.xaroExpandedContainer : ''}
     `;
 
     return (
-        <div className={topPanelStyles}>
+        <div className={containerStyles}>
             {children}
-            <div className={styles.backgroundTexture}></div>
+            <div className={styles.xaroCube}></div>
         </div>
     );
 }

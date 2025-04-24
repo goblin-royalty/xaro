@@ -1,6 +1,6 @@
-import styles from "./Search.module.css";
+import styles from "./SearchResult.module.css";
 
-export default function Search() {
+export default function SearchResult() {
     return (
         <div className={styles.SearchContainer}>
             <h2>Search results</h2>

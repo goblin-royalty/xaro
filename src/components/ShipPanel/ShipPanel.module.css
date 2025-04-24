@@ -14,10 +14,6 @@
     transition: 0.2s ease-in-out;
 }
 
-.hiddenShipPanel {
-    top: -100%;
-}
-
 .backgroundTexture {
     position: absolute;
     height: 41rem;

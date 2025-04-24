@@ -7,19 +7,14 @@ import ShipSystem from "../ShipSystem/ShipSystem";
 import KodningReserves from "../KodningReserves/KodningReserves";
 
 import temp_data from '../../data_old/data.json';
-export default function ShipPanel({focused}) {
+export default function ShipPanel() {
 
     const changePage = () => {};
 
     const data = objectToArray(temp_data.ship_subsystems);
 
-    const ShipPanelStyles = `
-        ${styles.ShipPanel}  
-        ${focused === 'top' ? styles.hiddenShipPanel : ''}   
-    `;
-
     return (
-        <div className={ShipPanelStyles}>
+        <div className={styles.ShipPanel}>
             <div className={styles.subSystemDisplay}>
                 {data.map(subsystem => (
                     <ShipSystem

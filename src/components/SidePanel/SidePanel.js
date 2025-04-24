@@ -1,31 +1,65 @@
 "use client";
 
 import styles from "./SidePanel.module.css";
-import { useState } from "react";
 
-export default function SidePanel({ children, position, focused }) {
-    const [expanded, setExpanded] = useState(false);
+import { useState, useEffect } from "react";
 
-    const toggleExpanded = () => {
-        setExpanded(!expanded);
-    };
+import { useSwipeable } from "react-swipeable";
+
+export default function SidePanel({ children, position }) {
+    const [panelFocused, setPanelFocused] = useState('');
+
+    // TODO - remove repetition of the swipable code here, in TopPanel and AskXaro
+
+    // attach swipeable to document
+    useEffect(() => {
+        documentRef(document);
+        // Clean up swipeable event listeners
+        return () => documentRef({});
+    });
+
+    const { ref: documentRef } = useSwipeable({
+        onSwipedDown: () => {
+            focusedPanel('top');
+        },
+        onSwipedUp: () => {
+            focusedPanel('bottom');
+        },
+        onSwipedLeft: () => {
+            focusedPanel('right');       
+        },
+        onSwipedRight: () => {
+            focusedPanel('left');
+        },
+        preventDefaultTouchmoveEvent: true,
+   });
+
+    const focusedPanel = (position) => {
+        if (panelFocused !== '' && panelFocused !== position) {
+            // if one side panel is focused as we swipe to the other side this stop the opposite panel from being focused
+            setPanelFocused('');
+        }
+        else {
+            setPanelFocused(position)
+        }
+    }
 
     const sidePanelStyles = `
         ${styles.SidePanel}  
-        ${expanded || (focused === position) ? styles.ExpandedPanel : ''}   
+        ${panelFocused === position ? styles.ExpandedPanel : ''}   
         ${position === 'left' ? styles.leftPanel : styles.rightPanel}
     `;
-    const mobileToggle = `
+    const mobileToggleIndicator = `
         ${styles.mobileToggle}
         ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
-        ${(focused !== '') ? styles.hiddenToggle : ''}
+        ${(panelFocused !== '') ? styles.hiddenToggle : ''}
     `;
 
     return (
         <div className={sidePanelStyles}>
         {children}
         <div className={styles.backgroundTexture}></div>
-        <div className={mobileToggle} onClick={() => {toggleExpanded();}}>
+        <div className={mobileToggleIndicator}>
             {position === 'left' ? 'Crew' : 'Orbit'}
         </div>
         </div>
