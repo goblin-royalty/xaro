@@ -2,7 +2,7 @@
     width: 100%;
     overflow: auto;
     transition: 0.2s ease-in-out;
-    padding: 2.5rem;
+    padding: 2rem 4rem 0 4rem;
 }
 
 .shipSubSystem {
@@ -19,18 +19,24 @@
 }
 
 .basicInfo {
-    display: flex;
-    flex-direction: unset;
-    align-items: start;
+    flex-direction: row;
     height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.basicInfo > h2 {
+    font-size: 1.4rem;;
 }
 
 .detailedInfo {
     display: none;
 }
+.detailedInfo > p > span {
+    color: #6a6a6a;
+}
 
 .selected {
-    box-shadow: 0px 6px 2px 8px #00000059;
     height: 13vh;
     margin-bottom: 2rem;
     background: #000000b3;
@@ -38,23 +44,18 @@
 }
 .selected .detailedInfo {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     text-wrap: balance;
     font-size: 1.2rem;
 }
 
-.ShipOverview h2:nth-child(1) {
-    width: 9rem;
-    }
-.ShipOverview h2:nth-child(2) {
-    width: 19rem;
+.title {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
 }
-.ShipOverview h2:nth-child(3) {
-    width: 46rem;
-}
-.ShipOverview h2:nth-child(4) {
-    width: 7rem;
-}
-
 /* Duplicated in ShipSystem component */
 .online {
     color: #45c845;
@@ -81,7 +82,7 @@
         border: 1px solid #4f4f4f;
         border-radius: 0.5rem;
         background: #00000069;
-        padding: 0.5rem 1rem;
+        padding: 0 1rem 1rem 1rem;
         margin-bottom: 0.7rem;
         cursor: pointer;
         display: flex;
@@ -90,7 +91,6 @@
     }
 
     .selected {
-        box-shadow: 0px 6px 2px 8px #00000059;
         height: auto;
         margin-bottom: 2rem;
         background: #000000b3;
@@ -98,25 +98,8 @@
     }
     .selected .detailedInfo {
         display: flex;
-    }
-
-    .ShipOverview h2:nth-child(1) {
-        width: 12rem;
-        font-size: 1.3rem;
-
-    }
-    .ShipOverview h2:nth-child(2) {
-        width: 25vw;
-        font-size: 1.3rem;
-
-    }
-    .ShipOverview h2:nth-child(3) {
-        width: 65vw;
-        font-size: 1.3rem;
-    }
-    .ShipOverview h2:nth-child(4) {
-        width: 7rem;
-        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* Duplicated in ShipSystem component */

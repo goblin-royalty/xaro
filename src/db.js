@@ -18,6 +18,22 @@ export async function getCrew() {
     return crewMembers;
 }
 
+export async function getCrewById(id) {
+    const crewMember = await sql`
+        SELECT * FROM crew_members WHERE id = ${id}
+    `;
+
+    return crewMember[0];
+}
+
+export async function getSubsystems() {
+    const subsystems = await sql`
+        SELECT * FROM ship_subsystems ORDER BY id ASC
+    `;
+
+    return subsystems;
+}
+
 export async function globalSearch(keyword) {
     const results = await sql`
         SELECT * FROM crew_members WHERE first_name ILIKE ${`%${keyword}%`}

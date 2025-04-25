@@ -1,5 +1,5 @@
 .SearchContainer {
-    width: 100%;
+    width: 80%;
     height: 82vh;
     background: #0d0d0d;
     display: flex;
@@ -17,6 +17,16 @@
     padding: 0 2.5rem;
     font-size: 1.5rem;
 }
+.SearchContainer > div > p:first-child {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
 .SearchContainer p > span {
     color: #6a6a6a;
+}
+/* Back button */
+.SearchContainer > a {
+    position: absolute;
+    bottom: 5.8rem;
+    left: 5.9rem;
 }

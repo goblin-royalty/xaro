@@ -19,12 +19,6 @@ export default function SidePanel({ children, position }) {
     });
 
     const { ref: documentRef } = useSwipeable({
-        onSwipedDown: () => {
-            focusedPanel('top');
-        },
-        onSwipedUp: () => {
-            focusedPanel('bottom');
-        },
         onSwipedLeft: () => {
             focusedPanel('right');       
         },

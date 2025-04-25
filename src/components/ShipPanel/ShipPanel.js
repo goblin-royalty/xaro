@@ -6,21 +6,26 @@ import styles from "./ShipPanel.module.css";
 import ShipSystem from "../ShipSystem/ShipSystem";
 import KodningReserves from "../KodningReserves/KodningReserves";
 
-import temp_data from '../../data_old/data.json';
-export default function ShipPanel() {
+export default function ShipPanel({subsystems}) {
 
     const changePage = () => {};
 
-    const data = objectToArray(temp_data.ship_subsystems);
-
+    // TEMP - manual list of subsystems to display in the top panel
+    let subsystem_shortlist = [];
+    subsystems.forEach(subsystem => {
+        if(subsystem.id === 1 || subsystem.id === 2 || subsystem.id === 4 || subsystem.id === 6 || subsystem.id === 7 || subsystem.id === 8) {
+            subsystem_shortlist.push(subsystem);
+        }
+    });
+    
     return (
         <div className={styles.ShipPanel}>
             <div className={styles.subSystemDisplay}>
-                {data.map(subsystem => (
+                {subsystem_shortlist.map(subsystem => (
                     <ShipSystem
                         key={subsystem.id}
                         changePage={changePage} 
-                        name={subsystem.name}
+                        type={subsystem.type}
                         systemStatus={subsystem.status}
                     />
                 ))}

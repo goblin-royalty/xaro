@@ -4,10 +4,6 @@ import galaxy_icon from "../../icons/current_galaxy_icon.svg";
 import cluster_icon from "../../icons/current_cluster_icon.png";
 import star_icon from "../../icons/current_star_icon.png";
 
-/* not used in page?
-import temp_data from '../../data_old/data.json';
- */
-
 import Tooltip from "../Tooltip/Tooltip";
 
 export default function CurrentLocation({click, currentPage, currentGalaxy, currentCluster, currentSystem}) {

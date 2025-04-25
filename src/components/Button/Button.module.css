@@ -1,0 +1,8 @@
+.DefaultButton {
+    border: 1px solid #000000;
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    background: #171717;
+    color: #dddddd;
+    text-decoration: none;
+}

@@ -1,7 +1,7 @@
 import styles from "./Main.module.css";
 
 // DB operations
-import {getCrew} from "../../db";
+import {getCrew, getSubsystems} from "../../db";
 
 // Server components
 import Form from "../Form/Form";
@@ -20,6 +20,7 @@ import ShipOverview from "../ShipOverview/ShipOverview";
 export default async function Main({ children }) {
 
     const crewMembers = await getCrew();
+    const subsystems = await getSubsystems();
 
     // const [currentPage, setCurrentPage] = useState('galaxy_map');
     // const [currentTab, setCurrentTab] = useState('');
@@ -58,20 +59,17 @@ export default async function Main({ children }) {
     //     return capitalizeFirstLetter(breadcrumb_target);
     // }
 
-    // TEMP for backend integration
-    const currentTab = '';
-
     return (
         <div className="App">
             <div className={styles.main}>
                 <div className={styles.galaxy_map}>
                     <TopPanel>
-                        <ShipOverview tab={currentTab}/>
+                        <ShipOverview subsystems={subsystems}/>
                     </TopPanel>
                     <SidePanel position='left'>
                         <CrewList crewMembers={crewMembers}/>
                     </SidePanel>
-                    <ShipPanel/>
+                    <ShipPanel subsystems={subsystems}/>
 
                     {children}
 

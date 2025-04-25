@@ -1,4 +1,7 @@
 .shipSystem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 4.4rem;
     font-size: 1.23rem;
     padding: 1rem;
@@ -9,11 +12,9 @@
 .shipSystem:last-child {
     border: none;
 }
-
 .title {
     margin: 0;
 }
-
 .online {
     color: #45c845;
 }
