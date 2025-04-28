@@ -1,5 +1,6 @@
-import Button from "../Button/Button";
 import styles from "./SearchResult.module.css";
+
+import Button from "../Button/Button";
 
 export default function SearchResult({data}) {
     const displayedData = () => {
@@ -13,7 +14,7 @@ export default function SearchResult({data}) {
     return (
         <div className={styles.SearchContainer}>
             <h2>Search results</h2>
-            <div className={styles.SearchBackground}>
+            <div>
                 {displayedData()}
             </div>
             <Button buttonHref={`\\`} buttonText={`Back`}/>

@@ -1,4 +1,6 @@
 .SearchContainer {
+    position: absolute;
+    left: 3.5rem;
     width: 80%;
     height: 82vh;
     background: #0d0d0d;
@@ -27,6 +29,6 @@
 /* Back button */
 .SearchContainer > a {
     position: absolute;
-    bottom: 5.8rem;
-    left: 5.9rem;
+    bottom: 2.4rem;
+    left: 2.4rem;
 }

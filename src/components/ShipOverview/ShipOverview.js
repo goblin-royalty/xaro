@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
 import styles from "./ShipOverview.module.css";
+
+import { useState } from "react";
 
 export default function ShipOverview({subsystems}) {
     const [selectedTab, setSelectedTab] = useState('');
@@ -11,7 +11,7 @@ export default function ShipOverview({subsystems}) {
         setSelectedTab(event.currentTarget.getAttribute('subsystem'));
     }
 
-    // Almost duplicate with displayStatus in ShipSystem component
+    // TODO: move to a location where it can be accessed from both here and ShipSystem because it is used in both places
     const displayStatus = (status) => {
         let status_display = {};
         if(status === 'Online') {

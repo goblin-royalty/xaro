@@ -4,28 +4,24 @@
     position: relative;
     z-index: 1;
 }
-
 .crewMemberTitle {
     font-size: 1.5rem;
     font-weight: normal;
     cursor: pointer;
     margin: 0;
 }
-
 .crewMemberContainer {
     font-size: 1rem;
     padding-top: 0.5rem;
 }
 
 @media (max-width: 500px) {
-
     .crewMemberSection {
         padding: 1rem;
         border-bottom: 1px solid #000;
         position: relative;
         z-index: 1;
     }
-    
     .crewMemberTitle {
         font-size: 2rem;
         font-weight: normal;
@@ -33,7 +29,6 @@
         margin: 0;
         text-align: center;
     }
-    
     .crewMemberContainer {
         font-size: 1.5rem;
         padding-top: 1.5rem;

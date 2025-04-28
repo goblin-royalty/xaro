@@ -15,7 +15,6 @@ export default function CelestialBodyDetails() {
             <p className={styles.detail}>Life signs: <span>NONE</span></p>
             <p className={styles.detail}>Urbanization: <span>NONE</span></p>
             <p className={styles.detail}>Valuable resources: <span className={styles.valuableResource}>NONE</span></p>
-            <div className={styles.backgroundTexture}></div>
         </div>
     );
 }

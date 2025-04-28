@@ -1,10 +1,10 @@
 "use client";
 
+import styles from "./CrewList.module.css";
+
 import { useState } from "react";
 
 import CrewMember from "../CrewMember/CrewMember";
-
-import styles from "./CrewList.module.css";
 
 export default function CrewList({crewMembers}) {
     const [expandedMemberId, setExpandedMemberId] = useState();

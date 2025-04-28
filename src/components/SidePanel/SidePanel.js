@@ -9,7 +9,7 @@ import { useSwipeable } from "react-swipeable";
 export default function SidePanel({ children, position }) {
     const [panelFocused, setPanelFocused] = useState('');
 
-    // TODO - remove repetition of the swipable code here, in TopPanel and AskXaro
+    // TODO - remove repetition of the swipable code here and TopPanel
 
     // attach swipeable to document
     useEffect(() => {
@@ -19,6 +19,12 @@ export default function SidePanel({ children, position }) {
     });
 
     const { ref: documentRef } = useSwipeable({
+        onSwipedDown: () => {
+            focusedPanel('top');
+        },
+        onSwipedUp: () => {
+            focusedPanel('bottom');
+        },
         onSwipedLeft: () => {
             focusedPanel('right');       
         },
@@ -38,6 +44,15 @@ export default function SidePanel({ children, position }) {
         }
     }
 
+    const determineHiddenToggleVisibility = () => {
+        let hidden = false;
+        if(panelFocused !== '' && panelFocused !== 'bottom'){
+            hidden = true;
+        }
+
+        return hidden;
+    }
+
     const sidePanelStyles = `
         ${styles.SidePanel}  
         ${panelFocused === position ? styles.ExpandedPanel : ''}   
@@ -46,16 +61,15 @@ export default function SidePanel({ children, position }) {
     const mobileToggleIndicator = `
         ${styles.mobileToggle}
         ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
-        ${(panelFocused !== '') ? styles.hiddenToggle : ''}
+        ${determineHiddenToggleVisibility() ? styles.hiddenToggle : ''}
     `;
 
     return (
         <div className={sidePanelStyles}>
-        {children}
-        <div className={styles.backgroundTexture}></div>
-        <div className={mobileToggleIndicator}>
-            {position === 'left' ? 'Crew' : 'Orbit'}
-        </div>
+            {children}
+            <div className={mobileToggleIndicator}>
+                {position === 'left' ? 'Crew' : 'Orbit'}
+            </div>
         </div>
     ); 
 }

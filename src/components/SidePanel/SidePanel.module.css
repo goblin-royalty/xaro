@@ -1,4 +1,5 @@
-/* ----------- BOTH SIDES ---------- */
+/* both sides */
+
 .SidePanel {
     width: 15rem;
     display: flex;
@@ -13,7 +14,6 @@
     scrollbar-width: none;
     /* Firefox */
 }
-
 .mobileToggle {
     position: absolute;
     top: 18rem;
@@ -33,15 +33,15 @@
     z-index: 1;
 }
 
-/* ---------- LEFT SIDE -------------*/
+/* left side */
 
 .leftPanel {
-    background: #0d0d0d;
     left: 0rem;
+    background: #0d0d0d;
     box-shadow: 15px 14px #00000059;
 }
 
-/* ---------- RIGHT SIDE -------------*/
+/* right side */
 
 .rightSidePanel::-webkit-scrollbar {
     display: none;
@@ -55,8 +55,7 @@
         transition-timing-function: ease-in-out;
     }
 
-    /* ----------LEFT SIDE MOBILE Landscape -------------*/
-
+    /* left side */
     .leftPanel {
         margin-left: -18.2rem;
         box-shadow: none;
@@ -68,23 +67,19 @@
 
     }
 
-    /* ----------RIGHT SIDE MOBILE -------------*/
-
+    /* right side */
     .rightPanel {
         margin-right: -18.2rem;
     }
-
     .rightPanel>div {
         box-shadow: none;
     }
-
     .rightToggle {
         margin-right: 15rem;
         right: 0rem;
     }
 
-    /* Both */
-
+    /* both sides */
     .ExpandedPanel {
         width: 100%;
         flex: none;
@@ -92,16 +87,12 @@
         top: 2.3rem;
         margin: 0;
     }
-
     .mobileToggle {
         display: flex;
     }
 }
 
 @media (max-width: 500px) {
-
-    /* needed later for swiping and fullscreen panels */
-
     .leftToggle {
         margin-left: 18.2rem;
         left: 0rem;
@@ -117,5 +108,4 @@
     .SidePanel > div.hiddenToggle {
         display: none;
     }
-
 }

@@ -3,15 +3,9 @@
 import styles from "./BottomPanel.module.css";
 
 export default function BottomPanel({children}) {
-
-    const containerStyles = `
-        ${styles.askXaroContainer}
-    `;
-
     return (
-        <div className={containerStyles}>
+        <div className={styles.askXaroContainer}>
             {children}
-            <div className={styles.xaroCube}></div>
         </div>
     );
 }

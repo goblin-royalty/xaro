@@ -1,12 +1,10 @@
+/* TODO: move this and the body styles to global styles */
 @font-face {
     font-family: hackedFont;
     src: url(../../../public/Hacked-KerX.ttf);
 }
-
-html {
-    overflow: hidden;
-}
 body {
+    overflow: hidden;
     font-family: hackedFont;
     margin: 0;
 }
@@ -15,9 +13,8 @@ body {
     height: 100%;
     color: #ddd;
     overflow: hidden;
-    
 }
-.galaxy_map {
+.mainContainer {
     background: #000;
     width: 100%;
     height: 100vh;
@@ -27,119 +24,8 @@ body {
     align-items: center;
 }
 
-.shipOverview {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #060506;
-}
-
-/* System map */
-.system_map {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    background-color: #000;
-    position: relative;
-}
-.backgroundTexture {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url('../../../public/texture_7.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.09;
-}
-
-/* Probably a better way to handle this than styling CelestialBody component elements from Main */
-.orbit_0 {
-    position: absolute;
-    width: 8vw;
-    height: 8vh;
-    top: 38vh;
-    left: 46.2vw;
-    z-index: 5;
-}
-
-.orbit_1 {
-    position: absolute;
-    width: 18vw;
-    height: 14vh;
-    left: 40.25vw;
-    top: 37vh;
-    border: 5px double #ffffff29;
-    border-radius: 100%;
-    z-index: 4;
-}
-.orbit_1 > div {
-    top: 2.8vh;
-    left: -2vw;
-}
-
-.orbit_2 {
-    position: absolute;
-    width: 30vw;
-    height: 26vh;
-    left: 35vw;
-    top: 32vh;
-    border: 5px double #ffffff29;
-    border-radius: 100%;
-    z-index: 3;
-}
-.orbit_2 > div {
-    top: 22.4vh;
-    left: 12.3vw;
-}
-
-.orbit_3 {
-    position: absolute;
-    width: 48vw;
-    height: 39vh;
-    left: 26vw;
-    top: 24.5vh;
-    border: 5px double #ffffff29;
-    border-radius: 100%;
-    z-index: 2;
-}
-.orbit_3 > div {
-    top: 8vh;
-    left: 44vw;
-}
-
-.orbit_1:hover, .orbit_2:hover, .orbit_3:hover {
-    border-color: #ffffff63;
-}
-.orbit_1:hover > div > img, .orbit_2:hover > div > img, .orbit_3:hover > div > img{
-    border-color: #d4adcf38;
-}
-
-
-/* Cluster page styles */
-.cluster_map {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../../public/nebula_1.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
 @media (max-width: 1000px) {
     html {
         font-size: 11px;
-    }
-    .orbit_2 > div {
-        top: 19.5vh;
-        left: 12.3vw;
     }
 }

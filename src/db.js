@@ -18,7 +18,7 @@ export async function getCrew() {
     return crewMembers;
 }
 
-export async function getCrewById(id) {
+export async function getCrewMemberById(id) {
     const crewMember = await sql`
         SELECT * FROM crew_members WHERE id = ${id}
     `;

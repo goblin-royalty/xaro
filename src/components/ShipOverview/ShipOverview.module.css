@@ -4,7 +4,6 @@
     transition: 0.2s ease-in-out;
     padding: 2rem 4rem 0 4rem;
 }
-
 .shipSubSystem {
     height: auto;
     border: 1px solid #4f4f4f;
@@ -17,25 +16,21 @@
     flex-direction: column;
     transition: 0.2s ease-in-out;
 }
-
 .basicInfo {
     flex-direction: row;
     height: auto;
     display: flex;
     justify-content: space-between;
 }
-
 .basicInfo > h2 {
     font-size: 1.4rem;;
 }
-
 .detailedInfo {
     display: none;
 }
 .detailedInfo > p > span {
     color: #6a6a6a;
 }
-
 .selected {
     height: 13vh;
     margin-bottom: 2rem;
@@ -49,14 +44,13 @@
     text-wrap: balance;
     font-size: 1.2rem;
 }
-
 .title {
     width: 100%;
     font-size: 2rem;
     text-align: center;
     margin-top: 0;
 }
-/* Duplicated in ShipSystem component */
+/* Duplicated in ShipSystem */
 .online {
     color: #45c845;
 }
@@ -71,12 +65,10 @@
     ::-webkit-scrollbar {
         -webkit-appearance: none;
     }
-
     .ShipOverview {
         width: 100%;
         overflow: auto;   
     }
-
     .shipSubSystem {
         height: 3rem;
         border: 1px solid #4f4f4f;
@@ -89,7 +81,6 @@
         flex-direction:column;
         transition: 0.2s ease-in-out;
     }
-
     .selected {
         height: auto;
         margin-bottom: 2rem;
@@ -100,16 +91,5 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    /* Duplicated in ShipSystem component */
-    .online {
-        color: #45c845;
-    }
-    .inactive {
-        color: gray;
-    }
-    .offline {
-        color: #812121;
     }
 }

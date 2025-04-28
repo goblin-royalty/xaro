@@ -5,8 +5,8 @@ import {globalSearch} from "../../../db";
    
 export async function POST(request) {
     const body = await request.json();
-    let searchResults = [];
 
+    let searchResults = [];
     if(body.keyword && body.keyword.length) {
         searchResults = await globalSearch(body.keyword);
     }

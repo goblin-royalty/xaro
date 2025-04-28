@@ -1,7 +1,5 @@
 "use client";
 
-import objectToArray from "../../utils/data_functions";
-
 import styles from "./ShipPanel.module.css";
 import ShipSystem from "../ShipSystem/ShipSystem";
 import KodningReserves from "../KodningReserves/KodningReserves";

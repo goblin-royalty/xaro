@@ -6,7 +6,9 @@
     width: 32rem;
     background: #0d0d0d;
     align-items: center;
-    border-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 1px solid #000;
 }
 .searchResult {
     padding: 0.5rem 1rem;

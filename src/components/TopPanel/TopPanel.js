@@ -9,6 +9,8 @@ import { useSwipeable } from "react-swipeable";
 export default function TopPanel({children}) {
     const [panelFocused, setPanelFocused] = useState('');
 
+    // TODO - remove repetition of the swipable code here and SidePanel
+
     // attach swipeable to document
     useEffect(() => {
         documentRef(document);
@@ -61,7 +63,6 @@ export default function TopPanel({children}) {
     return (
         <div className={topPanelStyles}>
             {children}
-            <div className={styles.backgroundTexture}></div>
         </div>
     );
 }
