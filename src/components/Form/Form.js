@@ -20,8 +20,8 @@ export default function Form() {
                 },
                 body: JSON.stringify({ keyword })
             });
-            const data = await response.json();
-            setSearchResults(data);
+            const response_data = await response.json();
+            setSearchResults(response_data);
         }
         if(keyword.length) {
             getSearchResults(keyword);

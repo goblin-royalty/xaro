@@ -5,9 +5,11 @@ import Button from "../Button/Button";
 export default function SearchResult({data}) {
     const displayedData = () => {
         return Object.entries(data).map(([key,value]) => {
-            return (
-                <p key={key}>{key} : <span>{value.toString()}</span></p>
-            )
+            if(key !== 'id') {
+                return (
+                    <p key={key}>{key} : <span>{value.toString()}</span></p>
+                )
+            }
         })
     }
 

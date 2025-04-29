@@ -10,20 +10,14 @@ const sql = postgres({
 
 // DB operations
 
+// Get many
+
 export async function getCrew() {
     const crewMembers = await sql`
         SELECT * FROM crew_members ORDER BY id ASC
     `;
 
     return crewMembers;
-}
-
-export async function getCrewMemberById(id) {
-    const crewMember = await sql`
-        SELECT * FROM crew_members WHERE id = ${id}
-    `;
-
-    return crewMember[0];
 }
 
 export async function getSubsystems() {
@@ -34,7 +28,46 @@ export async function getSubsystems() {
     return subsystems;
 }
 
+// Get one by id
+
+export async function getCrewMemberById(id) {
+    const crewMember = await sql`
+        SELECT * FROM crew_members WHERE id = ${id}
+    `;
+
+    return crewMember[0];
+}
+
+export async function getShipRecordById(id) {
+    const crewMember = await sql`
+        SELECT * FROM ship_records WHERE id = ${id}
+    `;
+
+    return crewMember[0];
+}
+
+export async function getSubsystemById(id) {
+    const crewMember = await sql`
+        SELECT * FROM ship_subsystems WHERE id = ${id}
+    `;
+
+    return crewMember[0];
+}
+
+// Get many by any column
+
+// TODO handle the search in different tables better or at least split into multiple functions
 export async function globalSearch(keyword) {
+    let results = [];
+
+    results.push(await searchCrewMembers(keyword));
+    results.push(await searchSubsystems(keyword));
+    results.push(await searchShipRecords(keyword));
+
+    return results;
+}
+
+async function searchCrewMembers(keyword) {
     const results = await sql`
         SELECT * FROM crew_members WHERE first_name ILIKE ${`%${keyword}%`}
         OR last_name ILIKE ${`%${keyword}%`}
@@ -45,5 +78,39 @@ export async function globalSearch(keyword) {
         OR expertise ILIKE ${`%${keyword}%`}
         OR (first_name || ' ' || last_name) ILIKE ${`%${keyword}%`}
     `;
-    return results;
+
+    return {
+        source: 'crew_member',
+        displayProperty: 'first_name',
+        data: results
+    }
+}
+
+async function searchSubsystems(keyword) {
+    const results = await sql`
+        SELECT * FROM ship_subsystems WHERE type ILIKE ${`%${keyword}%`}
+        OR status ILIKE ${`%${keyword}%`}
+        OR current ILIKE ${`%${keyword}%`}
+        OR value ILIKE ${`%${keyword}%`}
+        OR details ILIKE ${`%${keyword}%`}
+    `;
+
+    return {
+        source: 'subsystem',
+        displayProperty: 'current',
+        data: results
+    }
+}
+
+async function searchShipRecords(keyword) {
+    const results = await sql`
+        SELECT * FROM ship_records WHERE title ILIKE ${`%${keyword}%`}
+        OR text ILIKE ${`%${keyword}%`}
+    `;
+
+    return {
+        source: 'ship_record',
+        displayProperty: 'title',
+        data: results
+    }
 }
