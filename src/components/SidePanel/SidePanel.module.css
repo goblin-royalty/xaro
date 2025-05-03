@@ -20,8 +20,8 @@
     display: none;
     width: 2rem;
     background: #171717;
-    height: 8rem;
-    margin-top: -4rem;
+    height: 14rem;
+    margin-top: -10rem;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
@@ -64,7 +64,7 @@
     .leftToggle {
         margin-left: 18.2rem;
         left: 0rem;
-
+        letter-spacing: 1rem;
     }
 
     /* right side */
@@ -83,8 +83,8 @@
     .ExpandedPanel {
         width: 100%;
         flex: none;
-        height: 82vh;
-        top: 2.3rem;
+        height: 79vh;
+        top: 1rem;
         margin: 0;
     }
     .mobileToggle {

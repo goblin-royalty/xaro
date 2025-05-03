@@ -7,6 +7,7 @@ body {
     overflow: hidden;
     font-family: hackedFont;
     margin: 0;
+    touch-action: none;
 }
 .main {
     width: 100%;

@@ -2,11 +2,11 @@
     position: absolute;
     left: 3.5rem;
     width: 80%;
-    height: 82vh;
+    height: 79vh;
     background: #0d0d0d;
     display: flex;
     flex-direction: column;
-    margin-top: 4.3rem;
+    margin-top: 1rem;
     align-items: flex-start;
 }
 .mainContainer > h2 {

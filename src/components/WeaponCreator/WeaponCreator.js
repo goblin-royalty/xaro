@@ -170,6 +170,10 @@ export default function WeaponCreator() {
         }
     }
     const displayClipAmmo = () => {
+        const clipSize = getClipSize();
+        return clipSize === 'unlimited' ? 'unlimited' : `reload after ${clipSize} uses`;
+    }
+    const getClipSize = () => {
         let clipSize = '';
 
         if((proficiency === 'simpleRanged1h' || proficiency === 'martialRanged1h') && specialization !== 'Devouring') {
@@ -195,8 +199,8 @@ export default function WeaponCreator() {
         } else {
             clipSize = 'unlimited';
         }
-        
-        return clipSize === 'unlimited' ? 'unlimited' : `reload after ${clipSize} uses`;
+
+        return clipSize;
     }
     const displayRange = () => {
         if(proficiency === 'martialRanged2h') {
@@ -210,22 +214,63 @@ export default function WeaponCreator() {
         }
     }
     const displayWeaponDamage = () => {
+        const damage = getWeaponDamage();
+        
+        if(smart) {
+            return damage;
+        } else {
+            return `${damage} + ${displayRelevantAttribute()} modifier`;
+        }
+    }
+    const getWeaponDamage = () => {
         let damage = '';
 
         if(proficiency === 'simpleMelee1h') {
-            damage = specialization === 'Devouring' ? '2d10 / 1d10' : '1d10';
+            if(specialization === 'Devouring') {
+                damage = '2d10 / 1d10';
+            } else {
+                damage = '1d10';
+            }
         } else if(proficiency === 'simpleRanged1h') {
-            damage = specialization === 'Devouring' ? '4d4 / 2d4' : '2d4';
+            if(specialization === 'Devouring') {
+                damage = '4d4 / 2d4';
+            } else {
+                damage = '2d4';
+            }
         } else if(proficiency === 'martialMelee1h') {
-            damage = specialization === 'Devouring' ? '4d10 / 2d10' : '2d10';
+            if(specialization === 'Devouring') {
+                damage = '4d10 / 2d10';
+            } else if(smart) {
+                damage = '3d4';
+            } else {
+                damage = '2d10';
+            }
         } else if(proficiency === 'martialMelee2h') {
-            damage = specialization === 'Devouring' ? '6d10 / 3d10' : '3d10';
+            if(specialization === 'Devouring') {
+                damage = '6d10 / 3d10';
+            } else if(smart) {
+                damage = '2d10';
+            } else {
+                damage = '3d10';
+            }
         } else if(proficiency === 'martialRanged1h') {
-            damage = specialization === 'Devouring' ? '8d4 / 4d4' : '4d4';
+            if(specialization === 'Devouring') {
+                damage = '8d4 / 4d4';
+            } else if(smart) {
+                damage = '3d4';
+            } else {
+                damage = '4d4';
+            }
         } else if(proficiency === 'martialRanged2h') {
-            damage = specialization === 'Devouring' ? '6d6 / 3d6' : '3d6';
+            if(specialization === 'Devouring') {
+                damage = '6d6 / 3d6';
+            } else if(smart) {
+                damage = '4d4';
+            } else {
+                damage = '3d6';
+            }
         }
-        
+
         return damage;
     }
     const displaySpecialEffect = () => {
@@ -270,7 +315,7 @@ export default function WeaponCreator() {
                     <h3>Result:</h3>
                     <div>
                         <p><span>Attack:</span> {displayAttackBonus()} {displayRelevantAttribute()} modifier + proficiency bonus</p>
-                        <p><span>Damage:</span> {displayWeaponDamage()} + {displayRelevantAttribute()} modifier {displayDamageType()}</p>
+                        <p><span>Damage:</span> {displayWeaponDamage()} {displayDamageType()}</p>
                         <p><span>Range:</span> {displayRange()} feet</p>
                         <p><span>Ammo:</span> {displayClipAmmo()}, {displayTotalAmmo()} total ammo</p>
                         <p><span>Special:</span> {displaySpecialEffect()}</p>

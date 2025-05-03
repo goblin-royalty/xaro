@@ -68,7 +68,7 @@ export default function SidePanel({ children, position }) {
         <div className={sidePanelStyles}>
             {children}
             <div className={mobileToggleIndicator}>
-                {position === 'left' ? 'Crew' : 'Orbit'}
+                {position === 'left' ? 'Crew' : 'Location'}
             </div>
         </div>
     ); 

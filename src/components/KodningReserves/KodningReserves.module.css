@@ -46,7 +46,7 @@
         width: 100%;
         background: #000;
         position: relative;
-        height: 0.6rem;
+        height: 1rem;
         border-radius: 0.5rem;
         margin-top: 0.1rem;
         margin-left: 4.5rem;
@@ -54,7 +54,7 @@
     }
     .kodningCurrentBar {
         background: #483548;
-        height: 0.4rem;
+        height: 1rem;
         margin-top: 0.1rem;
         margin-left: 0.19rem;
         border-top-left-radius: 0.5rem;
@@ -62,8 +62,7 @@
     }
     .kondingCurrentText {
         position: absolute;
-        top: 0.8rem;
-        
+        top: 0;
         font-size: 0.9rem;
         text-align: center;
         left: 50%;

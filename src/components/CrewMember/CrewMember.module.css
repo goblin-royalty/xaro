@@ -1,8 +1,9 @@
 .crewMemberSection {
-    padding: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid #000;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 .crewMemberTitle {
     font-size: 1.5rem;
@@ -17,7 +18,7 @@
 
 @media (max-width: 500px) {
     .crewMemberSection {
-        padding: 1rem;
+        padding: 1rem 0;
         border-bottom: 1px solid #000;
         position: relative;
         z-index: 1;

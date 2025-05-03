@@ -5,6 +5,7 @@ import styles from "./CrewList.module.css";
 import { useState } from "react";
 
 import CrewMember from "../CrewMember/CrewMember";
+import Button from "../Button/Button";
 
 export default function CrewList({crewMembers}) {
     const [expandedMemberId, setExpandedMemberId] = useState();
@@ -23,6 +24,7 @@ export default function CrewList({crewMembers}) {
                     data={crew_member}
                 />
             ))}
+            <Button buttonHref={'/kodning_weapon_creator'} buttonText={'Weapon creator'}/>
         </div>
     );
 }

@@ -1,12 +1,12 @@
 .askXaroContainer {
     position: absolute;
-    bottom: 0rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 2;
+    bottom: 3rem;
+    z-index: 3;
+    width: 100%;
 }
-@media (max-width: 1000px){
-    .askXaroContainer {
-        margin-bottom: 0;
-    }
+.askXaroContainer > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
