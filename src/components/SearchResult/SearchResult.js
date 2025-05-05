@@ -19,7 +19,7 @@ export default function SearchResult({data}) {
             <div>
                 {displayedData()}
             </div>
-            <Button buttonHref={`\\`} buttonText={`Back`}/>
+            <Button type={'link'} action={`\\`} text={`Back`}/>
         </div>
     );
 }

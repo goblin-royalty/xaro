@@ -2,48 +2,10 @@
 
 import styles from "./SidePanel.module.css";
 
-import { useState, useEffect } from "react";
+import Button from "../Button/Button";
 
-import { useSwipeable } from "react-swipeable";
-
-export default function SidePanel({ children, position }) {
-    const [panelFocused, setPanelFocused] = useState('');
-
-    // TODO - remove repetition of the swipable code here and TopPanel
-
-    // attach swipeable to document
-    useEffect(() => {
-        documentRef(document);
-        // Clean up swipeable event listeners
-        return () => documentRef({});
-    });
-
-    const { ref: documentRef } = useSwipeable({
-        onSwipedDown: () => {
-            focusedPanel('top');
-        },
-        onSwipedUp: () => {
-            focusedPanel('bottom');
-        },
-        onSwipedLeft: () => {
-            focusedPanel('right');       
-        },
-        onSwipedRight: () => {
-            focusedPanel('left');
-        },
-        preventDefaultTouchmoveEvent: true,
-   });
-
-    const focusedPanel = (position) => {
-        if (panelFocused !== '' && panelFocused !== position) {
-            // if one side panel is focused as we swipe to the other side this stop the opposite panel from being focused
-            setPanelFocused('');
-        }
-        else {
-            setPanelFocused(position)
-        }
-    }
-
+export default function SidePanel({ children, position, panelFocused, focusPanel }) {
+    
     const determineHiddenToggleVisibility = () => {
         let hidden = false;
         if(panelFocused !== '' && panelFocused !== 'bottom'){
@@ -63,13 +25,22 @@ export default function SidePanel({ children, position }) {
         ${ position === 'left' ? styles.leftToggle : styles.rightToggle}
         ${determineHiddenToggleVisibility() ? styles.hiddenToggle : ''}
     `;
+    const focusCurrentPanel = () => {
+        const currentPanelFocus = position === 'left' ? 'left' : 'right';
+        focusPanel(currentPanelFocus);
+    }
+    // Position that would hide the panel
+    const unfocusPanel = () => {
+        focusPanel('');
+    }
 
     return (
         <div className={sidePanelStyles}>
             {children}
-            <div className={mobileToggleIndicator}>
+            <div onClick={focusCurrentPanel} className={mobileToggleIndicator}>
                 {position === 'left' ? 'Crew' : 'Location'}
             </div>
+            <Button type={'onclick'} action={unfocusPanel} text={'<'}/>
         </div>
     ); 
 }

@@ -2,10 +2,14 @@
 
 import styles from "./ShipOverview.module.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function ShipOverview({subsystems}) {
+export default function ShipOverview({subsystems, preselectedSubsystem}) {
     const [selectedTab, setSelectedTab] = useState('');
+
+    useEffect(() => {
+        setSelectedTab(preselectedSubsystem);
+    }, [preselectedSubsystem])
     
     const selectSubSystem = (event) => {
         setSelectedTab(event.currentTarget.getAttribute('subsystem'));

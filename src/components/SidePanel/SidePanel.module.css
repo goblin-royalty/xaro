@@ -33,6 +33,27 @@
     z-index: 1;
 }
 
+/* Hide panel button */
+.SidePanel > a {
+    position: absolute;
+    bottom: 2.4rem;
+    width: 3rem;
+    padding: 0.2rem 0.4rem 0 0.4rem;
+    font-size: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.SidePanel.leftPanel > a {
+    right: 3.5rem;
+}
+.SidePanel.rightPanel > a {
+    left: 3.5rem;
+    transform: rotate(180deg);
+}
+
 /* left side */
 
 .leftPanel {

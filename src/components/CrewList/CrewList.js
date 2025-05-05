@@ -24,7 +24,7 @@ export default function CrewList({crewMembers}) {
                     data={crew_member}
                 />
             ))}
-            <Button buttonHref={'/kodning_weapon_creator'} buttonText={'Weapon creator'}/>
+            <Button type={'link'} action={'/kodning_weapon_creator'} text={'Weapon creator'}/>
         </div>
     );
 }

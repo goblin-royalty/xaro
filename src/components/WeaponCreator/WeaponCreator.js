@@ -322,7 +322,7 @@ export default function WeaponCreator() {
                     </div>
                 </div>
             </div>
-            <Button buttonHref={`\\`} buttonText={`Back`}/>
+            <Button type={'link'} action={`\\`} text={`Back`}/>
         </div>
     );
 }

@@ -4,9 +4,7 @@ import styles from "./ShipPanel.module.css";
 import ShipSystem from "../ShipSystem/ShipSystem";
 import KodningReserves from "../KodningReserves/KodningReserves";
 
-export default function ShipPanel({subsystems}) {
-
-    const changePage = () => {};
+export default function ShipPanel({subsystems, selectSubSystem}) {
 
     // TEMP - manual list of subsystems to display in the top panel
     let subsystem_shortlist = [];
@@ -22,9 +20,10 @@ export default function ShipPanel({subsystems}) {
                 {subsystem_shortlist.map(subsystem => (
                     <ShipSystem
                         key={subsystem.id}
-                        changePage={changePage} 
+                        selectSubSystem={selectSubSystem} 
                         type={subsystem.type}
                         systemStatus={subsystem.status}
+                        id={subsystem.id}
                     />
                 ))}
             </div>

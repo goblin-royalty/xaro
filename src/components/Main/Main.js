@@ -4,15 +4,7 @@ import styles from "./Main.module.css";
 import {getCrew, getSubsystems} from "../../db";
 
 // Client components
-import SidePanel from "../SidePanel/SidePanel";
-import TopPanel from "../TopPanel/TopPanel";
-import BottomPanel from "../BottomPanel/BottomPanel";
-
-import CrewList from "../CrewList/CrewList";
-import CelestialBodyDetails from "../CelestialBodyDetails/CelestialBodyDetails";
-import Form from "../Form/Form";
-import ShipPanel from "../ShipPanel/ShipPanel";
-import ShipOverview from "../ShipOverview/ShipOverview";
+import MainPanel from "../MainPanel/MainPanel";
 
 export default async function Main({ children }) {
 
@@ -22,25 +14,7 @@ export default async function Main({ children }) {
     return (
         <div className="App">
             <div className={styles.main}>
-                <div className={styles.mainContainer}>
-                    <TopPanel>
-                        <ShipOverview subsystems={subsystems}/>
-                    </TopPanel>
-                    <SidePanel position='left'>
-                        <CrewList crewMembers={crewMembers}/>
-                    </SidePanel>
-                    <ShipPanel subsystems={subsystems}/>
-
-                    {children}
-
-                    <BottomPanel>
-                        <Form/>
-                    </BottomPanel>
-
-                    <SidePanel position='right'>
-                        <CelestialBodyDetails/>
-                    </SidePanel>
-                </div>
+                <MainPanel data={{crewMembers: crewMembers, subsystems: subsystems}} children={children}/>
             </div>
         </div>
     );

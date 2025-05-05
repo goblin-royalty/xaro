@@ -2,47 +2,9 @@
 
 import styles from "./TopPanel.module.css";
 
-import { useState, useEffect } from "react";
+import Button from "../Button/Button";
 
-import { useSwipeable } from "react-swipeable";
-
-export default function TopPanel({children}) {
-    const [panelFocused, setPanelFocused] = useState('');
-
-    // TODO - remove repetition of the swipable code here and SidePanel
-
-    // attach swipeable to document
-    useEffect(() => {
-        documentRef(document);
-        // Clean up swipeable event listeners
-        return () => documentRef({});
-    });
-
-    const { ref: documentRef } = useSwipeable({
-        onSwipedDown: () => {
-            focusedPanel('top');
-        },
-        onSwipedUp: () => {
-            focusedPanel('bottom');
-        },
-        onSwipedLeft: () => {
-            focusedPanel('right');       
-        },
-        onSwipedRight: () => {
-            focusedPanel('left');
-        },
-        preventDefaultTouchmoveEvent: true,
-    });
-
-    const focusedPanel = (position) => {
-        if (panelFocused !== '' && panelFocused !== position) {
-            // if one side panel is focused as we swipe to the other side this stop the opposite panel from being focused
-            setPanelFocused('');
-        }
-        else {
-            setPanelFocused(position)
-        }
-    }
+export default function TopPanel({children, panelFocused, focusPanel}) {
 
     const createExpansionStyles = () => {
         let expandedStyles = '';
@@ -52,17 +14,21 @@ export default function TopPanel({children}) {
 
         return expandedStyles;
     }
-    
     const expandedStyle = createExpansionStyles();
-
     const topPanelStyles = `
             ${styles.TopPanel}  
             ${expandedStyle}   
     `;
 
+    // Position that would hide the panel
+    const unfocusPanel = () => {
+        focusPanel('');
+    }
+
     return (
         <div className={topPanelStyles}>
             {children}
+            <Button type={'onclick'} action={unfocusPanel} text={'<'}/>
         </div>
     );
 }
