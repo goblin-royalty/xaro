@@ -1,12 +1,12 @@
 .SearchContainer {
     position: absolute;
-    left: 3.5rem;
     width: 80%;
-    height: 79vh;
+    height: 78vh;
+    top: 10rem;
+    left: 3.5rem;
     background: #0d0d0d;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
     align-items: flex-start;
 }
 .SearchContainer > h2 {
@@ -31,4 +31,17 @@
     position: absolute;
     bottom: 2.4rem;
     left: 2.4rem;
+}
+.InteractiveText {
+    display: flex;
+    flex-wrap: wrap;
+}
+.nonInteractiveWord {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 410px) {
+    .SearchContainer {
+        height: 71vh;
+    }
 }

@@ -130,3 +130,12 @@
         display: none;
     }
 }
+@media (max-width: 410px) {
+    .SidePanel {
+        height: 72vh;
+        margin-top: -8rem;
+    }
+    .mobileToggle {
+        margin-top: 0rem;
+    }
+}

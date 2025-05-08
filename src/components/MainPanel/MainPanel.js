@@ -16,9 +16,14 @@ import Form from "../Form/Form";
 import ShipPanel from "../ShipPanel/ShipPanel";
 import ShipOverview from "../ShipOverview/ShipOverview";
 
+import { KeywordContext } from "../../context/KeywordContext";
+
 export default function MainPanel({data, children}) {
     const [panelFocused, setPanelFocused] = useState('');
     const [selectedSubsystem, setSelectedSubsystem] = useState('');
+
+    const [keyword, setKeyword] = useState("");
+    const keywordFromContext = { keyword, setKeyword };
 
     // attach swipeable to document
     useEffect(() => {
@@ -63,24 +68,26 @@ export default function MainPanel({data, children}) {
     }
 
     return (
-        <div className={styles.mainContainer}>
-            <TopPanel panelFocused={panelFocused} focusPanel={focusPanel}>
-                <ShipOverview subsystems={data.subsystems} preselectedSubsystem={selectedSubsystem}/>
-            </TopPanel>
-            <SidePanel position='left' panelFocused={panelFocused} focusPanel={focusPanel}>
-                <CrewList crewMembers={data.crewMembers}/>
-            </SidePanel>
-            <ShipPanel subsystems={data.subsystems} selectSubSystem={selectSubSystem}/>
+        <KeywordContext.Provider value={keywordFromContext}>
+            <div className={styles.mainContainer}>
+                <TopPanel panelFocused={panelFocused} focusPanel={focusPanel}>
+                    <ShipOverview subsystems={data.subsystems} preselectedSubsystem={selectedSubsystem}/>
+                </TopPanel>
+                <SidePanel position='left' panelFocused={panelFocused} focusPanel={focusPanel}>
+                    <CrewList crewMembers={data.crewMembers}/>
+                </SidePanel>
+                <ShipPanel subsystems={data.subsystems} selectSubSystem={selectSubSystem}/>
 
-            {children}
+                {children}
 
-            <BottomPanel>
-                <Form/>
-            </BottomPanel>
+                <BottomPanel>
+                    <Form/>
+                </BottomPanel>
 
-            <SidePanel position='right' panelFocused={panelFocused} focusPanel={focusPanel}>
-                <CelestialBodyDetails/>
-            </SidePanel>
-        </div>
+                <SidePanel position='right' panelFocused={panelFocused} focusPanel={focusPanel}>
+                    <CelestialBodyDetails/>
+                </SidePanel>
+            </div>
+        </KeywordContext.Provider>
     );
 }

@@ -2,7 +2,8 @@
     position: absolute;
     left: 3.5rem;
     width: 80%;
-    height: 79vh;
+    height: 78vh;
+    top: 9rem;
     background: #0d0d0d;
     display: flex;
     flex-direction: column;
@@ -89,4 +90,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (max-width: 410px) {
+    .mainContainer {
+        height: 72vh;
+        top: 9rem;
+    }
 }
