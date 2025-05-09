@@ -1,0 +1,74 @@
+.mainContainer {
+    position: absolute;
+    justify-self: anchor-center;
+    flex-direction: column;
+    width: 80%;
+    height: 78vh;
+    top: 9rem;
+    background: #0d0d0d;
+    display: flex;
+    margin-top: 1rem;
+}
+.mainContainer > h2 {
+    padding: 1rem 0;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+.creatorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formInputText {
+    width: 21rem;
+    margin-bottom: 2rem;
+    background: #0d0d0d;
+    padding: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #ddd;
+    border: 1px solid #000;
+}
+.formTextArea {
+    width: 21rem;
+    height: 15rem;
+    margin-bottom: 2rem;
+    background: #0d0d0d;
+    padding: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    color: #ddd;
+    border: 1px solid #000;
+}
+.formFieldInvalid {
+    border-color: #812121;
+}
+/* Buttons */
+.buttonsContainer {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+.buttonsContainer > a:last-child {
+    width: 7rem;
+}
+.createdMessage {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #45c845;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.createdMessageVisible {
+    opacity: 1;
+}
+
+@media (max-width: 410px) {
+    .mainContainer {
+        height: 72vh;
+        top: 9rem;
+    }
+}

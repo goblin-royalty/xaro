@@ -9,6 +9,8 @@ import InteractiveWord from "../InteractiveWord/InteractiveWord";
 
 import { KeywordContext } from "../../context/KeywordContext";
 
+import IsWordInteractive from "../../utils/data_functions";
+
 export default function SearchResult({data}) {
     const { keyword, setKeyword } = useContext(KeywordContext);
 
@@ -18,7 +20,7 @@ export default function SearchResult({data}) {
         let keyCounter = 0;
         return textWordByWord.map(word => {
             keyCounter++;
-            if(word.length > 3 && word !== data.title) {
+            if(word !== data.title && IsWordInteractive(word)) {
                 return <InteractiveWord key={keyCounter} word={word} searchForWord={searchForWord}/>;
             } else {
                 return <span key={keyCounter} className={styles.nonInteractiveWord}>{word}</span>;

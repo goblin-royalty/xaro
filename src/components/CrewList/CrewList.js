@@ -24,6 +24,7 @@ export default function CrewList({crewMembers}) {
                     data={crew_member}
                 />
             ))}
+            <Button type={'link'} action={'/add_ship_record'} text={'+'}/>
             <Button type={'link'} action={'/kodning_weapon_creator'} text={'Weapon creator'}/>
         </div>
     );

@@ -10,6 +10,17 @@ const sql = postgres({
 
 // DB operations
 
+// Insert record
+
+export async function createRecord(new_record_title, new_record_text) {
+    const insertResults = await sql`
+        INSERT INTO ship_records (title, text)
+        VALUES (${new_record_title}, ${new_record_text})
+    `;
+
+    return insertResults;
+}
+
 // Get many
 
 export async function getCrew() {
