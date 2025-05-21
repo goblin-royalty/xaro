@@ -88,6 +88,7 @@ async function searchCrewMembers(keyword) {
         OR current_status ILIKE ${`%${keyword}%`}
         OR expertise ILIKE ${`%${keyword}%`}
         OR (first_name || ' ' || last_name) ILIKE ${`%${keyword}%`}
+        LIMIT 10
     `;
 
     return {
@@ -104,6 +105,7 @@ async function searchSubsystems(keyword) {
         OR current ILIKE ${`%${keyword}%`}
         OR value ILIKE ${`%${keyword}%`}
         OR details ILIKE ${`%${keyword}%`}
+        LIMIT 10
     `;
 
     return {
@@ -117,6 +119,7 @@ async function searchShipRecords(keyword) {
     const results = await sql`
         SELECT * FROM ship_records WHERE title ILIKE ${`%${keyword}%`}
         OR text ILIKE ${`%${keyword}%`}
+        LIMIT 10
     `;
 
     return {

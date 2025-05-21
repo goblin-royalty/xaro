@@ -15,15 +15,15 @@ export default function FormInput({keyword, setKeyword}) {
 
     const debounced = useDebouncedCallback(
         (value) => {
-            setKeyword(value);
+            if(value.trim() !== '') {
+                setKeyword(value);
+            }
         }, 500
     );
 
     const handleInputChange = (event) => {
-        if(event.target.value.trim() !== '') {
-            setInputValue(event.target.value);
-            debounced(event.target.value);
-        }
+        setInputValue(event.target.value);
+        debounced(event.target.value);
     }
 
     return (

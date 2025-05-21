@@ -1,8 +1,8 @@
 import styles from "./CrewMember.module.css";
 
 export default function CrewMember({toggleCrewMember, expanded, data : {id, first_name, last_name, crew_rank, race, composition, current_status, expertise}}) {
+    let crew_member_info = '';
 
-    let crew_member_info;
     if(expanded) {
         crew_member_info = 
             <div className={styles.crewMemberSection}>

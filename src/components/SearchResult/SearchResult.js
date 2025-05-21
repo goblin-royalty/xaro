@@ -2,7 +2,7 @@
 
 import styles from "./SearchResult.module.css";
 
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 import Button from "../Button/Button";
 import InteractiveWord from "../InteractiveWord/InteractiveWord";
@@ -13,6 +13,7 @@ import IsWordInteractive from "../../utils/data_functions";
 
 export default function SearchResult({data}) {
     const { keyword, setKeyword } = useContext(KeywordContext);
+    const [expanded, setExpanded] = useState(false);
 
     const createInteractiveText = (plainText) => {
         const textWordByWord = plainText.split(' ');
@@ -41,14 +42,19 @@ export default function SearchResult({data}) {
             }
         })
     }
+    
+    const expandContainer = () => {
+        setExpanded(!expanded);
+    }
 
     return (
-        <div className={styles.SearchContainer}>
+        <div className={expanded ? `${styles.SearchContainer} ${styles.ExpandedSearchContainer}`: styles.SearchContainer}>
             <h2>Search results</h2>
             <div>
                 {displayedData()}
             </div>
             <Button type={'link'} action={`\\`} text={`Back`}/>
+            <Button type={'onclick'} action={expandContainer} text={`< >`}/>
         </div>
     );
 }

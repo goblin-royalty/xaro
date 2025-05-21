@@ -9,6 +9,13 @@
     flex-direction: column;
     align-items: flex-start;
 }
+.SearchContainer.ExpandedSearchContainer {
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 4;
+}
 .SearchContainer > h2 {
     padding: 1rem 0;
     font-size: 2rem;
@@ -30,8 +37,15 @@
 .SearchContainer > a {
     position: absolute;
     bottom: 2.4rem;
+}
+.SearchContainer > a:nth-of-type(1) {
     left: 2.4rem;
 }
+/* Expand button */
+.SearchContainer > a:nth-of-type(2) {
+    right: 2.4rem;
+}
+
 .InteractiveText {
     display: flex;
     flex-wrap: wrap;
