@@ -66,6 +66,23 @@
     opacity: 1;
 }
 
+@media (min-width: 1000px) {
+    .mainContainer {
+        top: 7rem;
+        width: 87rem;
+        height: 41rem;
+    }
+    .formInputText {
+       width: 30rem;
+    }
+    .formTextArea {
+        width: 82rem;
+    }
+    .createdMessage {
+        margin-top: 1rem;
+    }
+}
+
 @media (max-width: 410px) {
     .mainContainer {
         height: 72vh;

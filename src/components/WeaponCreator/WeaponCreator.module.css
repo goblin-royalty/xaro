@@ -48,6 +48,7 @@
     background-color: #171717;
     padding: 0.7rem 1rem;
     border: 2px solid #000;
+    appearance: none;
 }
 .selectContainer > select.disabledSelect {
     pointer-events: none;
@@ -90,6 +91,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 1000px) {
+    .mainContainer {
+        top: 7rem;
+        width: 87rem;
+        height: 41rem;
+        justify-self: anchor-center;
+        left: unset;
+    }
+    .selectContainer > select {
+        width: 36%;
+    }
+    .creatorContainer::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
 }
 
 @media (max-width: 410px) {

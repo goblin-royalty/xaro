@@ -28,3 +28,14 @@
 .expandedTopPanel {
     top: 0;
 }
+
+@media (min-width: 1000px) {
+    .TopPanel {
+        width: 87rem;
+        height: 44rem;
+        padding-bottom: 5rem;
+    }
+    .TopPanel > a {
+        bottom: -1.4rem;
+    }
+}

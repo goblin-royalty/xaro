@@ -10,3 +10,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (min-width: 1000px) {
+    .askXaroContainer {
+        height: 6rem;
+    }
+}

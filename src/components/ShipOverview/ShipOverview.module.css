@@ -61,6 +61,15 @@
     color: #812121;
 }
 
+@media (min-width: 1000px) {
+    .ShipOverview::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    .selected {
+        height: 15rem;
+    }
+}
+
 @media (max-width: 1000px) {
     ::-webkit-scrollbar {
         -webkit-appearance: none;

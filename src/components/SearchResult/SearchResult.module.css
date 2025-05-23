@@ -54,6 +54,33 @@
     margin-right: 0.5rem;
 }
 
+@media (min-width: 1000px) {
+    .SearchContainer {
+        left: 17rem;
+        width: 86rem;
+        height: 34rem;
+        padding-bottom: 5rem;
+    }
+    .SearchContainer > div {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        font-size: 1.2rem;
+    }
+    .SearchContainer > div::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    .SearchContainer > div > p:first-child {
+        font-size: 1.2rem;
+    }
+    .SearchContainer > a {
+        bottom: 1rem;
+    }
+    .SearchContainer.ExpandedSearchContainer {
+        padding-bottom: 0;
+    }
+}
+
 @media (max-width: 410px) {
     .SearchContainer {
         height: 71vh;

@@ -20,3 +20,9 @@
     animation-duration: 30s;
     animation-iteration-count: infinite;
 }
+
+@media (min-width: 1000px) {
+    .ShipStatusBackground {
+        background-size: auto;
+    }
+}

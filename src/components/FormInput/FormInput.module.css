@@ -9,10 +9,18 @@
     color: #ddd;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+@media (min-width: 1000px) {
+    .askXaro {
+        margin-top: 2rem;
+    }
 }
 
 @media (max-width: 1000px){
     .askXaro {
         margin-top: 0;
+        border-bottom: none;
     }
 }

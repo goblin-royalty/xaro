@@ -68,7 +68,14 @@
     display: none;
 }
 
-
+@media (min-width: 1000px) {
+    .SidePanel.leftPanel > a {
+        display: none;
+    }
+    .SidePanel.rightPanel > a {
+        display: none;
+    }
+}
 @media (max-width: 1000px) {
     .SidePanel {
         width: 18.2rem;
