@@ -97,10 +97,29 @@
         box-sizing: border-box;
     }
 }
-
 @media (max-width: 410px) {
     .SearchContainer {
         height: 80%;
         margin-top: 38%;
+    }
+}
+@media (max-width: 400px) {
+    .SearchContainer {
+        height: 75%;
+        margin-top: 83%;
+    }
+    .SearchContainer > div:first-of-type {
+        overflow-y: scroll;
+        margin-bottom: 5rem;
+    }
+    .SearchContainer.ExpandedSearchContainer {
+        height: 110%;
+        margin-top: 55%;
+    }
+}
+@media (max-height: 700px) {
+    .SearchContainer {
+        height: 72%;
+        margin-top: 88%;
     }
 }

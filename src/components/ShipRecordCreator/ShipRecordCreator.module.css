@@ -109,3 +109,21 @@
         margin-top: 90%;
     }
 }
+@media (max-width: 400px) {
+    .mainContainer {
+        height: 75%;
+        margin-top: 83%;
+    }
+    .buttonsContainer {
+        margin-top: 40%;
+    }
+}
+@media (max-height: 700px) {
+    .mainContainer {
+        height: 72%;
+        margin-top: 88%;
+    }
+    .buttonsContainer {
+        margin-top: 15%;
+    }
+}

@@ -122,3 +122,15 @@
         margin-top: 38%;
     }
 }
+@media (max-width: 400px) {
+    .mainContainer {
+        height: 75%;
+        margin-top: 83%;
+    }
+}
+@media (max-height: 700px) {
+    .mainContainer {
+        height: 72%;
+        margin-top: 88%;
+    }
+}

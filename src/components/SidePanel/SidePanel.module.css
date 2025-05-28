@@ -89,7 +89,6 @@
         margin-left: -18.2rem;
         box-shadow: none;
     }
-
     .leftToggle {
         left: 0;
         letter-spacing: 1rem;
@@ -122,11 +121,30 @@
         display: none;
     }
 }
-
+@media (max-width: 450px) {
+    .ExpandedPanel {
+        height: 69.5%;
+        top: 12%;
+    }
+    .mobileToggle {
+        top: 37%;
+        height: 18%;
+    }
+}
 @media (max-width: 410px) {
     .ExpandedPanel {
         height: 80%;
         top: 11%;
+    }
+    .mobileToggle {
+        top: 41%;
+        height: 18%;
+    }
+}
+@media (max-width: 400px) {
+    .ExpandedPanel {
+        height: 75%;
+        top: 14%;
     }
     .mobileToggle {
         top: 41%;

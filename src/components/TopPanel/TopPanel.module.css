@@ -1,6 +1,7 @@
 .TopPanel {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -20,7 +21,6 @@
     width: 3rem;
     justify-content: center;
     align-items: center;
-    justify-self: anchor-center;
     padding: .8rem .4rem .8rem 0;
     font-size: 3rem;
     transform: rotate(90deg);
@@ -48,6 +48,24 @@
         bottom: -0.6rem;
     }
 }
+@media (max-width: 450px) {
+    .TopPanel {
+        height: 82%;
+        margin-top: -140%;
+    }
+    .expandedTopPanel {
+        margin-top: 0;
+    }
+}
+@media (max-width: 450px) {
+    .TopPanel {
+        height: 83%;
+        margin-top: -180%;
+    }
+    .expandedTopPanel {
+        margin-top: 0;
+    }
+}
 @media (max-width: 410px) {
     .TopPanel {
         height: 86%;
@@ -58,5 +76,23 @@
     }
     .TopPanel > a {
         bottom: 0rem;
+    }
+}
+@media (max-width: 400px) {
+    .TopPanel {
+        height: 83%;
+        margin-top: -220%;
+    }
+    .expandedTopPanel {
+        margin-top: 0;
+    }
+}
+@media (max-height: 700px) {
+    .TopPanel {
+        height: 80%;
+        margin-top: -206%;
+    }
+    .expandedTopPanel {
+        margin-top: 0;
     }
 }
