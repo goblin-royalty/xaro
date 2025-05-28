@@ -1,12 +1,14 @@
 /* both sides */
 
 .SidePanel {
-    width: 15rem;
+    position: fixed;
+    height: 75%;
+    width: 20%;
+    top: 12.5%;
+    left: 0;
     display: flex;
     padding: 0rem;
-    height: 35rem;
     border-radius: 0.5rem;
-    position: relative;
     z-index: 2;
     flex-direction: column;
     -ms-overflow-style: none;
@@ -14,14 +16,17 @@
     scrollbar-width: none;
     /* Firefox */
 }
+.SidePanel.rightPanel {
+    right: 0;
+    left: unset;
+}
 .mobileToggle {
-    position: absolute;
-    top: 18rem;
+    position: fixed;
+    top: 39%;
     display: none;
     width: 2rem;
     background: #171717;
-    height: 14rem;
-    margin-top: -10rem;
+    height: 22%;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
@@ -55,15 +60,11 @@
 }
 
 /* left side */
-
 .leftPanel {
-    left: 0rem;
     background: #0d0d0d;
-    box-shadow: 15px 14px #00000059;
 }
 
 /* right side */
-
 .rightSidePanel::-webkit-scrollbar {
     display: none;
 }
@@ -76,9 +77,9 @@
         display: none;
     }
 }
-@media (max-width: 1000px) {
+
+@media (max-width: 810px) {
     .SidePanel {
-        width: 18.2rem;
         transition: height 0.1s, width 0.1s;
         transition-timing-function: ease-in-out;
     }
@@ -90,8 +91,7 @@
     }
 
     .leftToggle {
-        margin-left: 18.2rem;
-        left: 0rem;
+        left: 0;
         letter-spacing: 1rem;
     }
 
@@ -99,50 +99,37 @@
     .rightPanel {
         margin-right: -18.2rem;
     }
-    .rightPanel>div {
+    .rightPanel > div {
         box-shadow: none;
+        display: flex;
     }
     .rightToggle {
-        margin-right: 15rem;
-        right: 0rem;
+        right: 0;
     }
 
     /* both sides */
     .ExpandedPanel {
         width: 100%;
         flex: none;
-        height: 79vh;
-        top: 1rem;
+        height: 73%;
+        top: 14%;
         margin: 0;
     }
     .mobileToggle {
         display: flex;
     }
-}
-
-@media (max-width: 500px) {
-    .leftToggle {
-        margin-left: 18.2rem;
-        left: 0rem;
-    }
-    .rightPanel > div {
-        box-shadow: none;
-        display: flex;
-    }
-    .rightToggle {
-        margin-right: 18.2rem;
-        right: 0rem;
-    }
     .SidePanel > div.hiddenToggle {
         display: none;
     }
 }
+
 @media (max-width: 410px) {
-    .SidePanel {
-        height: 72vh;
-        margin-top: -8rem;
+    .ExpandedPanel {
+        height: 80%;
+        top: 11%;
     }
     .mobileToggle {
-        margin-top: 0rem;
+        top: 41%;
+        height: 18%;
     }
 }

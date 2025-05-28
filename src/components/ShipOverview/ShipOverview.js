@@ -12,7 +12,11 @@ export default function ShipOverview({subsystems, preselectedSubsystem}) {
     }, [preselectedSubsystem])
     
     const selectSubSystem = (event) => {
-        setSelectedTab(event.currentTarget.getAttribute('subsystem'));
+        if(event.currentTarget.getAttribute('subsystem') === selectedTab) {
+            setSelectedTab('');
+        } else {
+            setSelectedTab(event.currentTarget.getAttribute('subsystem'));
+        }
     }
 
     // TODO: move to a location where it can be accessed from both here and ShipSystem because it is used in both places

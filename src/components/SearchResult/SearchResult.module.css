@@ -1,19 +1,19 @@
 .SearchContainer {
-    position: absolute;
     width: 80%;
-    height: 78vh;
-    top: 10rem;
-    left: 3.5rem;
+    height: 62%;
+    margin-top: 7%;
     background: #0d0d0d;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 .SearchContainer.ExpandedSearchContainer {
     width: 100%;
-    left: 0;
-    top: 0;
     height: 100%;
+    margin-top: 0;
     z-index: 4;
 }
 .SearchContainer > h2 {
@@ -22,7 +22,8 @@
     align-self: center;
     width: auto;
 }
-.SearchContainer > div {
+.SearchContainer > div:first-of-type {
+    width: inherit;
     padding: 0 2.5rem;
     font-size: 1.5rem;
 }
@@ -33,17 +34,15 @@
 .SearchContainer p > span {
     color: #6a6a6a;
 }
-/* Back button */
-.SearchContainer > a {
+            
+.buttonsSection {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     position: absolute;
-    bottom: 2.4rem;
-}
-.SearchContainer > a:nth-of-type(1) {
-    left: 2.4rem;
-}
-/* Expand button */
-.SearchContainer > a:nth-of-type(2) {
-    right: 2.4rem;
+    bottom: 1rem;
+    width: 100%;
 }
 
 .InteractiveText {
@@ -56,9 +55,11 @@
 
 @media (min-width: 1000px) {
     .SearchContainer {
-        left: 17rem;
-        width: 86rem;
-        height: 34rem;
+        margin-top: 64.4%;
+        width: 59%;
+        height: 66.2%;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
         padding-bottom: 5rem;
     }
     .SearchContainer > div {
@@ -73,16 +74,33 @@
     .SearchContainer > div > p:first-child {
         font-size: 1.2rem;
     }
-    .SearchContainer > a {
-        bottom: 1rem;
-    }
     .SearchContainer.ExpandedSearchContainer {
         padding-bottom: 0;
+        margin-top: 58.4%;
+    }
+    .SearchContainer.ExpandedSearchContainer > div:first-of-type {
+        padding: 0 8rem;
+    }
+}
+
+@media (max-width: 810px) {
+    .SearchContainer {
+        height: 73%;
+        margin-top: 30%;
+    }
+    .SearchContainer.ExpandedSearchContainer {
+        height: 110%;
+        margin-top: 9%;
+    }
+    .SearchContainer.ExpandedSearchContainer > div:first-of-type {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 410px) {
     .SearchContainer {
-        height: 71vh;
+        height: 80%;
+        margin-top: 38%;
     }
 }

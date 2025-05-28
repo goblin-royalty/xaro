@@ -38,6 +38,8 @@ export default function ShipRecordCreator() {
                 })
             })
             .then(() => {
+                setTitle('');
+                setData('');
                 setInputDisabled(false);
                 setCreateButtonText('Create');
                 showCreatedMessage();

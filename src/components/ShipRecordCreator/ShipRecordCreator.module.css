@@ -1,13 +1,14 @@
 .mainContainer {
-    position: absolute;
-    justify-self: anchor-center;
-    flex-direction: column;
     width: 80%;
-    height: 78vh;
-    top: 9rem;
+    height: 62%;
+    margin-top: 7%;
     background: #0d0d0d;
     display: flex;
-    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 .mainContainer > h2 {
     padding: 1rem 0;
@@ -46,6 +47,7 @@
 }
 /* Buttons */
 .buttonsContainer {
+    width: 100%;
     flex-direction: row;
     display: flex;
     justify-content: space-around;
@@ -68,24 +70,42 @@
 
 @media (min-width: 1000px) {
     .mainContainer {
-        top: 7rem;
-        width: 87rem;
-        height: 41rem;
+        margin-top: 64.4%;
+        width: 59%;
+        height: 75%;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    .creatorContainer {
+        width: 100%;
     }
     .formInputText {
-       width: 30rem;
+       width: 30%;
     }
     .formTextArea {
-        width: 82rem;
+        width: 82%;
     }
     .createdMessage {
         margin-top: 1rem;
     }
 }
 
+@media (max-width: 810px) {
+    .mainContainer {
+        height: 73%;
+        margin-top: 30%;
+    }
+    .buttonsContainer {
+        margin-top: 10%;
+    }
+}
+
 @media (max-width: 410px) {
     .mainContainer {
-        height: 72vh;
-        top: 9rem;
+        height: 80%;
+        margin-top: 38%;
+    }
+    .buttonsContainer {
+        margin-top: 90%;
     }
 }

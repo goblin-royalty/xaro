@@ -1,14 +1,14 @@
 .mainContainer {
-    position: absolute;
-    left: 3.5rem;
     width: 80%;
-    height: 78vh;
-    top: 9rem;
+    height: 62%;
+    margin-top: 7%;
     background: #0d0d0d;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
     align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 .mainContainer > h2 {
     padding: 1rem 0;
@@ -95,11 +95,11 @@
 
 @media (min-width: 1000px) {
     .mainContainer {
-        top: 7rem;
-        width: 87rem;
-        height: 41rem;
-        justify-self: anchor-center;
-        left: unset;
+        margin-top: 64.4%;
+        width: 59%;
+        height: 75%;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
     }
     .selectContainer > select {
         width: 36%;
@@ -109,9 +109,16 @@
     }
 }
 
+@media (max-width: 810px) {
+    .mainContainer {
+        height: 73%;
+        margin-top: 30%;
+    }
+}
+
 @media (max-width: 410px) {
     .mainContainer {
-        height: 72vh;
-        top: 9rem;
+        height: 80%;
+        margin-top: 38%;
     }
 }

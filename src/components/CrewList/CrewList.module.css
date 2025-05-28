@@ -5,15 +5,14 @@
     flex-direction: column;
     align-items: center;
 }
-.crewList > a {
+.buttonsSection {
+    display: flex;
+    flex-direction: row;
     position: absolute;
     bottom: 2.4rem;
-}
-.crewList > a:first-of-type {
-    left: 2.6rem;
-    font-size: 3rem;
-    padding: 0 1.15rem;
-    height: 3.2rem;
+    left: 0;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 @media (min-width: 1000px) {
@@ -23,16 +22,5 @@
     }
     .crewList::-webkit-scrollbar {
         -webkit-appearance: none;
-    }
-    .crewList > a {
-        font-size: 1.2rem;
-        bottom: 1rem;
-    }
-    .crewList > a:first-of-type {
-        bottom: 4rem;
-        padding: 0 0.63rem;
-        height: 2.4rem;
-        font-size: 2.3rem;
-        left: unset;
     }
 }

@@ -53,8 +53,10 @@ export default function SearchResult({data}) {
             <div>
                 {displayedData()}
             </div>
-            <Button type={'link'} action={`\\`} text={`Back`}/>
-            <Button type={'onclick'} action={expandContainer} text={`< >`}/>
+            <div className={styles.buttonsSection}>
+                <Button type={'link'} action={`\\`} text={`Back`}/>
+                <Button type={'onclick'} action={expandContainer} text={`< >`}/>
+            </div>
         </div>
     );
 }

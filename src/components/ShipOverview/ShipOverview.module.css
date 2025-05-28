@@ -1,5 +1,8 @@
 .ShipOverview {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     overflow: auto;
     transition: 0.2s ease-in-out;
     padding: 2rem 4rem 0 4rem;
@@ -35,7 +38,6 @@
     height: 13vh;
     margin-bottom: 2rem;
     background: #000000b3;
-    pointer-events: none;
 }
 .selected .detailedInfo {
     display: flex;
@@ -94,11 +96,21 @@
         height: auto;
         margin-bottom: 2rem;
         background: #000000b3;
-        pointer-events: none;
     }
     .selected .detailedInfo {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 810px) {
+    .ShipOverview {
+        height: 50rem;
+    }
+}
+@media (max-width: 410px) {
+    .ShipOverview {
+        height: 75rem;
     }
 }

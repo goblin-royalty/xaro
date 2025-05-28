@@ -26,3 +26,15 @@
         background-size: auto;
     }
 }
+
+@media (max-width: 810px) {
+    .ShipStatusBackground {
+        background-size: contain;
+    }
+}
+
+@media (max-width: 410px) {
+    .ShipStatusBackground {
+        background-size: contain;
+    }
+}

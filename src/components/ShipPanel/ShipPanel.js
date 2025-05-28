@@ -28,7 +28,7 @@ export default function ShipPanel({subsystems, selectSubSystem}) {
                 ))}
             </div>
             
-            <KodningReserves reservePercentage='2%'/>
+            <KodningReserves reservePercentage='2.5%'/>
             <div className={styles.cornerStyle}/>
         </div>
     );
