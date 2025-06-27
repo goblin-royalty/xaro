@@ -1,4 +1,4 @@
-import styles from "./Main.module.css";
+import "./Main.css";
 
 // DB operations
 import {getCrew, getSubsystems} from "../../db";
@@ -13,7 +13,7 @@ export default async function Main({ children }) {
 
     return (
         <div className="App">
-            <div className={styles.main}>
+            <div className='main'>
                 <MainPanel data={{crewMembers: crewMembers, subsystems: subsystems}} children={children}/>
             </div>
         </div>

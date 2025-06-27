@@ -33,19 +33,15 @@ export default function MainPanel({data, children}) {
     });
 
     const { ref: documentRef } = useSwipeable({
-        onSwipedDown: () => {
-            focusedPanel('top');
-        },
-        onSwipedUp: () => {
-            focusedPanel('bottom');
-        },
         onSwipedLeft: () => {
             focusedPanel('right');       
         },
         onSwipedRight: () => {
             focusedPanel('left');
         },
+        delta: { up: 50, down: 50, left: 25, right: 25 },
         preventDefaultTouchmoveEvent: true,
+        swipeDuration: 200
    });
 
    const focusedPanel = (position) => {

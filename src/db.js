@@ -21,6 +21,18 @@ export async function createRecord(new_record_title, new_record_text) {
     return insertResults;
 }
 
+// Update record
+
+export async function updateRecord(record_id, new_record_title, new_record_text) {
+    const insertResults = await sql`
+        UPDATE ship_records
+        SET title = ${new_record_title}, text = ${new_record_text}
+        WHERE id = ${record_id}
+    `;
+
+    return insertResults;
+}
+
 // Get many
 
 export async function getCrew() {

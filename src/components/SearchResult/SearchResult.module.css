@@ -9,6 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    z-index: 1;
 }
 .SearchContainer.ExpandedSearchContainer {
     width: 100%;
@@ -16,16 +17,20 @@
     margin-top: 0;
     z-index: 4;
 }
-.SearchContainer > h2 {
-    padding: 1rem 0;
-    font-size: 2rem;
-    align-self: center;
-    width: auto;
-}
-.SearchContainer > div:first-of-type {
+.titleSection {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 1rem 2.5rem;
     width: inherit;
+}
+.titleSection > h2 {
+    font-size: 2rem;
+}
+.dataSection {
     padding: 0 2.5rem;
     font-size: 1.5rem;
+    width: inherit;
 }
 .SearchContainer > div > p:first-child {
     font-size: 1.7rem;
@@ -58,8 +63,7 @@
         margin-top: 64.4%;
         width: 59%;
         height: 66.2%;
-        border-bottom-left-radius: 0.5rem;
-        border-bottom-right-radius: 0.5rem;
+        border-radius: 0.5rem;
         padding-bottom: 5rem;
     }
     .SearchContainer > div {

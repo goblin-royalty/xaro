@@ -6,15 +6,17 @@ import { useState } from "react";
 
 import Button from "../Button/Button";
 
-export default function ShipRecordCreator() {
-    const [title, setTitle] = useState('');
-    const [data, setData] = useState('');
+export default function ShipRecordCreator({ predefinedData = {}}) {
+    const editMode = predefinedData.hasOwnProperty('title') && predefinedData.hasOwnProperty('text');
+
+    const [title, setTitle] = useState(predefinedData.hasOwnProperty('title') > 0 ? predefinedData.title : '');
+    const [data, setData] = useState(predefinedData.hasOwnProperty('text') > 0 ? predefinedData.text : '');
     const [inputDisabled, setInputDisabled] = useState(false);
     const [created, setCreated] = useState(false);
     const [titleHighlighted, setTitleHighlighted] = useState(false);
     const [dataHighlighted, setDataHighlighted] = useState(false);
-    const [createButtonText, setCreateButtonText] = useState('Create');
-    
+    const [createButtonText, setCreateButtonText] = useState(editMode ? 'Update' : 'Create');
+
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
     };
@@ -25,27 +27,49 @@ export default function ShipRecordCreator() {
     const createNewRecord = () => {
         if(fieldsAreValid()) {
             setInputDisabled(true);
-            setCreateButtonText('Creating');
-            
-            fetch('/api/create', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    title: title,
-                    text: data
-                })
-            })
-            .then(() => {
-                setTitle('');
-                setData('');
-                setInputDisabled(false);
-                setCreateButtonText('Create');
-                showCreatedMessage();
-            });
+            editMode ? updateRecord() : createRecord();
         }
     };
+
+    const createRecord = () => {
+        setCreateButtonText('Creating');
+        fetch('/api/create', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                title: title,
+                text: data
+            })
+        })
+        .then(() => {
+            resetAndCompleteForm();
+            setCreateButtonText('Create');
+        });
+    }
+
+    const updateRecord = () => {
+        setCreateButtonText('Updating');
+        fetch('/api/edit', {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                id: predefinedData.id,
+                title: title,
+                text: data
+            })
+        })
+        .then(() => {
+            setCreateButtonText('Update');
+            resetAndCompleteForm();
+        });
+    }
+
+    const resetAndCompleteForm = () => {
+        setTitle('');
+        setData('');
+        setInputDisabled(false);
+        showCreatedMessage();
+    }
 
     const fieldsAreValid = () => {
         let titleValid = false;
@@ -78,7 +102,7 @@ export default function ShipRecordCreator() {
 
     return (
         <div className={styles.mainContainer}>
-            <h2>Add record to X'aro</h2>
+            <h2>{editMode ? 'Edit record' : 'Add record to X\'aro'}</h2>
             <div className={styles.creatorContainer}>
                 <input
                     type="text"
@@ -98,10 +122,10 @@ export default function ShipRecordCreator() {
                 </textarea>
             </div>
             <div className={styles.buttonsContainer}>
-                <Button type={'link'} action={`\\`} text={`Back`}/>
+                <Button text={`Back`}/>
                 <Button type={'onclick'} action={createNewRecord} text={createButtonText}/>
             </div>
-            <div className={creationResultClass}>Record added</div>
+            <div className={creationResultClass}>{editMode ? 'Record changed' : 'Record added'}</div>
         </div>
     );
 }

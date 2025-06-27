@@ -73,7 +73,7 @@
 }
 
 @media (max-width: 1000px) {
-    ::-webkit-scrollbar {
+    .ShipOverview::-webkit-scrollbar {
         -webkit-appearance: none;
     }
     .ShipOverview {

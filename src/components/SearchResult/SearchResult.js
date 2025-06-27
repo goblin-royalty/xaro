@@ -49,12 +49,15 @@ export default function SearchResult({data}) {
 
     return (
         <div className={expanded ? `${styles.SearchContainer} ${styles.ExpandedSearchContainer}`: styles.SearchContainer}>
-            <h2>Search results</h2>
-            <div>
+            <div className={styles.titleSection}>
+                <h2>Search results</h2>
+            </div>
+            <div className={styles.dataSection}>
                 {displayedData()}
             </div>
             <div className={styles.buttonsSection}>
-                <Button type={'link'} action={`\\`} text={`Back`}/>
+                <Button text={`Back`}/>
+                <Button type={'link'} action={`\\edit_ship_record\\${data.id}`} text={`Edit`}/>
                 <Button type={'onclick'} action={expandContainer} text={`< >`}/>
             </div>
         </div>

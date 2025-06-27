@@ -2,9 +2,24 @@
 
 import styles from "./TopPanel.module.css";
 
+import { useSwipeable } from "react-swipeable";
+
 import Button from "../Button/Button";
 
 export default function TopPanel({children, panelFocused, focusPanel}) {
+    const swipeTopHandlers = useSwipeable({
+        onSwipedDown: () => {
+            focusPanel('top');
+        },
+        preventDefaultTouchmoveEvent: true,
+    });
+
+    const swipeBottomHandlers = useSwipeable({
+        onSwipedUp: () => {
+            focusPanel('');
+        },
+        preventDefaultTouchmoveEvent: true,
+    });
 
     const createExpansionStyles = () => {
         let expandedStyles = '';
@@ -26,9 +41,13 @@ export default function TopPanel({children, panelFocused, focusPanel}) {
     }
 
     return (
-        <div className={topPanelStyles}>
-            {children}
-            <Button type={'onclick'} action={unfocusPanel} text={'<'}/>
-        </div>
+        <>
+            <div className={topPanelStyles} >
+                {children}
+                <Button type={'onclick'} action={unfocusPanel} text={'<'}/>
+            </div>
+            <div className={styles.TopSwipableArea} {...swipeTopHandlers}></div>
+            <div className={styles.BottomSwipableArea} {...swipeBottomHandlers}></div>
+        </>
     );
 }
