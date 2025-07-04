@@ -11,7 +11,7 @@ import { KeywordContext } from "../../context/KeywordContext";
 
 import IsWordInteractive from "../../utils/data_functions";
 
-export default function SearchResult({data}) {
+export default function SearchResult({data, editable}) {
     const { keyword, setKeyword } = useContext(KeywordContext);
     const [expanded, setExpanded] = useState(false);
 
@@ -57,7 +57,9 @@ export default function SearchResult({data}) {
             </div>
             <div className={styles.buttonsSection}>
                 <Button text={`Back`}/>
-                <Button type={'link'} action={`\\edit_ship_record\\${data.id}`} text={`Edit`}/>
+                { editable ? 
+                    <Button type={'link'} action={`\\edit_ship_record\\${data.id}`} text={`Edit`}/> 
+                : null}
                 <Button type={'onclick'} action={expandContainer} text={`< >`}/>
             </div>
         </div>

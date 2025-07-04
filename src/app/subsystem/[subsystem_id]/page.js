@@ -9,7 +9,7 @@ export default async function SubsystemDisplay({params}) {
 
     return (
         <Main>
-            <SearchResult data={data}/>
+            <SearchResult data={data} editable={false}/>
         </Main>
     );
 }

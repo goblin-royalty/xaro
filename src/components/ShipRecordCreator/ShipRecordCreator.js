@@ -3,6 +3,7 @@
 import styles from "./ShipRecordCreator.module.css";
 
 import { useState } from "react";
+import { redirect } from "next/navigation";
 
 import Button from "../Button/Button";
 
@@ -59,8 +60,7 @@ export default function ShipRecordCreator({ predefinedData = {}}) {
             })
         })
         .then(() => {
-            setCreateButtonText('Update');
-            resetAndCompleteForm();
+            redirect(`/ship_record/${predefinedData.id}`);
         });
     }
 

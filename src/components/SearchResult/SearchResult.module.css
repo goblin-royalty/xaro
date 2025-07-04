@@ -18,7 +18,7 @@
     z-index: 4;
 }
 .titleSection {
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     display: flex;
     padding: 1rem 2.5rem;
@@ -31,6 +31,7 @@
     padding: 0 2.5rem;
     font-size: 1.5rem;
     width: inherit;
+    box-sizing: border-box;
 }
 .SearchContainer > div > p:first-child {
     font-size: 1.7rem;

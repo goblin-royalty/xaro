@@ -9,7 +9,7 @@ export default async function ShipRecordDisplay({params}) {
 
     return (
         <Main>
-            <SearchResult data={data}/>
+            <SearchResult data={data} editable={true}/>
         </Main>
     );
 }
