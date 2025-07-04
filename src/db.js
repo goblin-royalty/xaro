@@ -1,12 +1,6 @@
 import postgres from 'postgres';
 
-const sql = postgres({
-    host: process.env.HOST,
-    port: process.env.DB_PORT,
-    database: process.env.DATABASE,
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD
-})
+const sql = postgres(process.env.DATABASE_URL);
 
 // DB operations
 
